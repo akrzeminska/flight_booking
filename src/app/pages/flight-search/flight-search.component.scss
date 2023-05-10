@@ -1,0 +1,52 @@
+$red-color: #ff5156;
+$rosy-color: #FE6587;
+$white-color: #FFFF;
+
+$navy-accent-color: #15294b;
+$grey-accent-color: #868A9A;
+$grey2-accent-color: #383949;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.section {
+    color: $navy-accent-color;
+    .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+    width: 1300px;
+    height: 500px;
+    background-color: $white-color;
+    box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
+    border-radius: 22px;
+    
+        img {
+            border-radius: 20px;
+            width: 250px;
+            height: 250px;
+        }
+
+    
+        .form-group, label {
+            padding: 5px;
+        }
+
+        .btn {
+        color: $white-color;
+        width: 500px;
+        background-color: #ff5156;
+        border-color: #ff5156;
+        }
+   
+    }
+}

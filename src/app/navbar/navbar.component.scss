@@ -1,0 +1,48 @@
+$red-color: #ff5156;
+$rosy-color: #FE6587;
+$white-color: #FFFF;
+
+$navy-accent-color: #15294b;
+$grey-accent-color: #868A9A;
+$grey2-accent-color: #383949;
+
+.nav {
+    text-transform: uppercase;
+    a {
+        padding: 3px 12px;
+    }
+    i {
+        padding: 5px;
+    }
+    
+    a, i {
+        color: $white-color;
+    }
+    a:hover, i:hover {
+        color: $navy-accent-color;
+        
+    }
+    .navbar-brand {
+        font-weight: bold;
+    }
+    .fa-bars {
+        padding: 10px;
+    }
+    .active {
+        color: $navy-accent-color;
+    }
+    span {
+        color: $navy-accent-color
+    }
+    img {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+    }
+}
+
+.navbar {
+    color: $white-color;
+    background-color: $red-color;
+    box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
+}

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="section">  
+        <div class="form">
+          <div class="img">
+            <img src="../assets/img/icon_book_flight.jpg" alt="">
+          </div>
+          <div class="text">
+            <h3>Search Flight</h3>
+            <form>
+                <div class="form-group">
+                  <label for="from"><i class="fas fa-plane-departure"></i> From</label>
+                  <input type="text" id="from" name="from">
+                </div>
+                <div class="form-group">
+                  <label for="to"><i class="fas fa-plane-arrival"></i> To</label>
+                  <input type="text" id="to" name="to">
+                </div>
+                <div class="form-group">
+                  <label for="departure"><i class="fas fa-calendar-alt"></i> Departure</label>
+                  <input type="date" id="departure" name="departure">
+                </div>
+                <div class="form-group">
+                  <label for="return"><i class="fas fa-calendar-alt"></i> Return</label>
+                  <input type="date" id="return" name="return">
+                </div>
+                <div class="form-group">
+                  <label for="passenger"><i class="fas fa-user"></i> Passenger</label>
+                  <input type="number" id="passenger" name="passenger" min="1" max="10">
+                </div>
+                <div class="form-group">
+                  <label for="class"><i class="fas fa-plane"></i> Class</label>
+                  <select id="class" name="class" >
+                    <option value="economy">Economy</option>
+                    <option value="business">Business</option>
+                    <option value="first-class">First Class</option>
+                  </select>
+                </div>
+                    <button type="button" class="btn slice">Search flights</button>
+              </form>
+          </div>
+        </div>
+    </div>
+</div>
