@@ -17,6 +17,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'search', component: FlightSearchComponent },
   { path: 'shopping', component: ShoppingComponent },
+  { path: 'flight-search', component: FlightSearchComponent},
+  { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
