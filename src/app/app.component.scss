@@ -3,10 +3,14 @@
 
 .nav {
     text-transform: uppercase;
+    
     a, i {
         color: $white-color;
     }
-    a:hover {
+    i {
+        padding: 4px;
+    }
+    a:hover, i:hover {
         color: $navy-accent-color;
     }
     .navbar-brand {
@@ -15,42 +19,38 @@
     .fa-bars {
         padding: 10px;
     }
-    .active {
+    .active, span {
         color: $navy-accent-color;
+    }
+    img {
+        padding: 10px;
     }
 }
 
 .navbar {
-    color: $white-color;
-    background-color: $red-color;
+    background-color: rgba(86, 194, 232, 1);
+    background-image: radial-gradient(circle, rgba(86, 194, 232, 1) 0%, rgba(0, 169, 209, 1) 100%);
+    -webkit-box-shadow: 0px 16px 24px 0px rgba(71, 122, 169, 1);
+    -moz-box-shadow: 0px 16px 24px 0px rgba(71, 122, 169, 1);
+    box-shadow: 0px 16px 24px 0px rgba(71, 122, 169, 1);
 }
 
-.header {
+.section {
     display: flex;
     justify-content: center;
     align-items: center;
     color: $navy-accent-color;
-    height: 837px;
+    height: 900px;
 
     .form {
     width: 800px;
     height: 257px;
     background-color: $white-color;
     border-radius: 20px;
-
-    .img {
-        display: inline-block;
-            img {
-            border-radius: 20px;
-            }
-        }
-    .text {
-        display: inline-block;
-        }
+    -webkit-box-shadow: 8px 8px 24px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -12px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -12px rgba(66, 68, 90, 1);
     }
 }
 
-.footer {
-    background-image: linear-gradient(90deg, rgba(255, 56, 66, 1) 0%, rgba(255, 81, 86, 1) 100%);
-    height: 100px;
-}
+
