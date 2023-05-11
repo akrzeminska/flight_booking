@@ -1,0 +1,116 @@
+$red-color: #ff5156;
+$rosy-color: #fe6587;
+$white-color: #ffff;
+
+$navy-accent-color: #15294b;
+$grey-accent-color: #868a9a;
+$grey2-accent-color: #383949;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../../../assets/img/background_airplane_large.png);
+  background-position: center;
+}
+
+.section {
+  color: $navy-accent-color;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+    width: 400px;
+    height: 600px;
+    background-color: $white-color;
+    box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
+    border-radius: 22px;
+
+    .panel-heading {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    img {
+      height: 200px;
+      padding: 10px;
+    }
+
+    #forget {
+      // min-width: 100px;
+      // margin-left: auto;
+      text-decoration: none;
+      cursor: pointer;
+      color: $red-color;
+      font-size: 0.9em;
+    }
+
+    #account {
+      font-size: 0.9em;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .form-inline label {
+      padding-left: 10px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .btn {
+      color: $white-color;
+      // width: 400px;
+      background-color: #ff5156;
+      border-color: #ff5156;
+      font-size: 1.2em;
+    }
+
+    .input-field {
+      border-radius: 5px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      background-color: #f5f5f5;
+
+      span {
+        color: $red-color;
+      }
+
+      input {
+        padding-left: 5px;
+        border: none;
+        background-color: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+
+    .input-field.error {
+      border: 1x solid $red-color;
+      color: $red-color;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 100%;
+    }
+
+    .fa-eye-slash.btn {
+      border: none;
+      outline: none;
+    }
+  }
+}
