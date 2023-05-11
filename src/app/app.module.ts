@@ -15,6 +15,7 @@ import { PlanesComponent } from './pages/planes/planes.component';
 import { FlightSummaryComponent } from './pages/flight-summary/flight-summary.component';
 import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     PlanesComponent,
     FlightSummaryComponent,
     ShoppingComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
