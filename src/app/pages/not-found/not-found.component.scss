@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-image: url(../../../assets/img/background_airplane_large.png);
+    background-position: center;
 }
 
 .section {
@@ -13,8 +15,8 @@
     justify-content: center;
     height: 100vh;
     
-    height: 500px;
-    width: 1300px;
+    width: 600px;
+    height: 600px;
     background-color: #ffff;
     border-radius: 22px;
     box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);

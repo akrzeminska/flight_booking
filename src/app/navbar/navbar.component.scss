@@ -9,7 +9,7 @@ $grey2-accent-color: #383949;
 .nav {
     text-transform: uppercase;
     a {
-        padding: 3px 12px;
+        padding: 0px 12px;
     }
     i {
         padding: 5px;
@@ -35,9 +35,12 @@ $grey2-accent-color: #383949;
         color: $navy-accent-color
     }
     img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         padding: 5px;
+    }
+    .btn {
+        margin: 2px;
     }
 }
 

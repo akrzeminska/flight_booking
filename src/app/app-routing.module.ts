@@ -8,10 +8,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FlightSearchComponent } from './pages/flight-search/flight-search.component';
 import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'sales', component: SalesComponent },
   { path: 'contact', component: ContactComponent },
