@@ -6,6 +6,12 @@ $navy-accent-color: #15294b;
 $grey-accent-color: #868A9A;
 $grey2-accent-color: #383949;
 
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .nav {
     text-transform: uppercase;
     a {
