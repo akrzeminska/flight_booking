@@ -30,4 +30,14 @@ export class LoginComponent implements OnInit {
     this.isText ? this.type = "text" : this.type = "password";
   }
 
+  onSubmit() {
+    if(this.loginForm.valid) {
+      // send the object to database
+      console.log(this.loginForm.value);
+    } else {
+      //throw the error using toaster and with required fields
+      console.log('Form is not valid');
+    }
+  }
+
 }
