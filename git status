@@ -1,0 +1,77 @@
+[33mcommit 8e51038a6480f4327f3aa17ce2b2c1fbe683c114[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Fri May 12 17:59:07 2023 +0200
+
+    adjusting the login button activity
+
+[33mcommit 3caa960ab3112edadeada028223eaf61ced892bd[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Fri May 12 15:07:06 2023 +0200
+
+    validation of login form with validation errors
+
+[33mcommit c28d0c5cc39c799e2a9fac632f97d8ca00669348[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Fri May 12 12:27:32 2023 +0200
+
+    resolved problem with display in Firefox browser
+
+[33mcommit 155d4660ae72f6e502353708fa877d9b2d7498c3[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Fri May 12 12:26:40 2023 +0200
+
+    ready view of login and sign up component
+
+[33mcommit d7cd32079502e1d1d4a0756f567c142054dc4107[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Thu May 11 21:07:52 2023 +0200
+
+    ready view of login component
+
+[33mcommit d4c3ebb38ec72e9c33b7268c3fc9b0f5aeaf6e98[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Thu May 11 14:49:55 2023 +0200
+
+    added router link to button in not-found-component
+
+[33mcommit d6edee13451c5b5d2a32e0f4b0d0a885942b7fa8[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Thu May 11 14:48:08 2023 +0200
+
+    added background to containers
+
+[33mcommit 775521978e2c9cb08224f9d34bcb266f64310b56[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Thu May 11 14:20:40 2023 +0200
+
+    added component signup
+
+[33mcommit 777e655faa87ea8a9f333440e4378ff4ac8f8429[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Wed May 10 22:29:33 2023 +0200
+
+    added router links to buttons
+
+[33mcommit e6f6f85ac4ee5c90d2c4345cda0e9fffe602c745[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Wed May 10 21:09:20 2023 +0200
+
+    added and styled group of cards to home page
+
+[33mcommit 3da66ddcbf6cba3f97f6e9ddd857f9d6e8259617[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Wed May 10 17:05:51 2023 +0200
+
+    structure of components,design of individual pages
+
+[33mcommit 0bdb32fd1ddd8d06670b6003e9abbc79cd42500c[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Mon May 8 19:33:41 2023 +0200
+
+    initial commit
+
+[33mcommit 1b58099d449377e79165310e574776e965a8c515[m
+Author: Adelina Krzemińska <adelina.krzeminska@gmail.com>
+Date:   Fri May 5 15:49:22 2023 +0200
+
+    initial commit

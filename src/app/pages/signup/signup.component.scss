@@ -95,6 +95,11 @@ $grey2-accent-color: #383949;
       color: $red-color;
     }
 
+    small {
+      font-size: 0.8em;
+      color: $red-color;
+    }
+
     input[type="text"],
     input[type="password"] {
       border: none;

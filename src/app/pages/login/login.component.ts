@@ -39,11 +39,11 @@ export class LoginComponent implements OnInit {
       // console.log('Form is not valid');
 
       this.validateAllFormFields(this.loginForm);
-      alert("Yor form is invalid")
+      alert("Yor form is invalid");
     }
   }
 
-  private validateAllFormFields(formGroup:FormGroup) {
+  private validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
 
@@ -54,5 +54,4 @@ export class LoginComponent implements OnInit {
       }
     })
   }
-
 }
