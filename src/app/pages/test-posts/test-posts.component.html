@@ -1,0 +1,16 @@
+<h1>Posty wystawione przez api</h1>
+<h3>https://jsonplaceholder.typicode.com/posts</h3>
+<table>
+    <tr>
+        <td>User Id</td>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Body</td>
+    </tr>
+    <tr *ngFor="let row of rows">
+        <td>{{row.userId}}</td>
+        <td>{{row.id}}</td>
+        <td>{{row.title}}</td>
+        <td>{{row.body}}</td>
+    </tr>
+</table>
