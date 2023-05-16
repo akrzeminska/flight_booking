@@ -1,1 +1,24 @@
-<p>fight-grid works!</p>
+<table>
+    <tr *ngFor="let row of rows">
+        <td>{{row.id}}</td>
+        <td>{{row.from}}</td>
+        <td>{{row.to}}</td>
+    </tr>
+</table>
+<br><br>
+<table>
+    <tr *ngFor="let row of rowsFiltered">
+        <td>{{row.id}}</td>
+        <td>{{row.from}}</td>
+        <td>{{row.to}}</td>
+    </tr>
+</table>
+
+<h1>Loty wyszukane poprzez formularz:</h1>
+<table>
+    <tr *ngFor="let row of searchedRows">
+        <td>{{row.id}}</td>
+        <td>{{row.from}}</td>
+        <td>{{row.to}}</td>
+    </tr>
+</table>

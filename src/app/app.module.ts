@@ -17,6 +17,9 @@ import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+import { TestPostsComponent } from './pages/test-posts/test-posts.component';
 import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 
 @NgModule({
@@ -35,12 +38,14 @@ import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
     ShoppingComponent,
     NotFoundComponent,
     SignupComponent,
-    FightGridComponent
+    FightGridComponent,
+    TestPostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
