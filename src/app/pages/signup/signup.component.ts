@@ -36,10 +36,9 @@ export class SignupComponent {
   onSignup(){
     if(this.signUpForm.valid){
       
-      console.log(this.signUpForm.value);
+      // console.log(this.signUpForm.value);
     } else {
       this.validateAllFormFields(this.signUpForm)
-
     }
   }
 

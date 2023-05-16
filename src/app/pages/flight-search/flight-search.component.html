@@ -6,7 +6,7 @@
           </div>
           <div class="text">
             <h3>Search Flight</h3>
-            <form>
+            <!-- <form>
                 <div class="form-group">
                   <label for="from"><i class="fas fa-plane-departure"></i> From</label>
                   <input type="text" id="from" name="from">
@@ -36,7 +36,63 @@
                   </select>
                 </div>
                     <button type="button" class="btn slice">Search flights</button>
+              </form> -->
+              <form [formGroup]="flightSearchForm" (ngSubmit)="searchFlights()">
+                <div>
+                  <label><i class="fas fa-plane-departure"></i> From:</label>
+                  <input type="text" formControlName="from">
+                </div>
+                <div>
+                  <label><i class="fas fa-plane-arrival"></i> To:</label>
+                  <input type="text" formControlName="to">
+                </div>
+                <div>
+                  <label><i class="fas fa-calendar-alt"></i> Departure Date:</label>
+                  <input type="date" formControlName="departureDate">
+                </div>
+                <div>
+                  <label><i class="fas fa-calendar-alt"></i> Return Date:</label>
+                  <input type="date" formControlName="returnDate">
+                </div>
+                <div>
+                  <label><i class="fas fa-user"></i> Passengers:</label>
+                  <input type="number" formControlName="passengers">
+                </div>
+                <div>
+                  <label><i class="fas fa-plane"></i> Class:</label>
+                  <select formControlName="class">
+                    <option value="economy"> Economy</option>
+                    <option value="business"> Business</option>
+                    <option value="first"> First</option>
+                  </select>
+                </div>
+                <div>
+                  <label> Baggage:</label>
+                    <select formControlName="class">
+                      <option value="cabin"> Cabin</option>
+                      <option value="20 kg"> 20 kg</option>
+                      <option value="30 kg"> 30 kg</option>
+                    </select>
+                </div>
+                <div>
+                  <label> Seat Selection:</label>
+                  <select id="seatSelection" formControlName="seatSelection">
+                    <option value=""> No preference</option>
+                    <option value="Window"> Window</option>
+                    <option value="Aisle"> Aisle</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn slice">Search</button>
               </form>
+              
+              <div *ngIf="searchResults.length > 0">
+                <h3>Search Results</h3>
+                <ul>
+                  <li *ngFor="let flight of searchResults">
+                    Flight from {{ flight.from }} to {{ flight.to }}, Departure Date: {{ flight.departureDate }}
+                  </li>
+                </ul>
+              </div>
           </div>
         </div>
     </div>
