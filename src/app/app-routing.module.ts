@@ -9,6 +9,7 @@ import { FlightSearchComponent } from './pages/flight-search/flight-search.compo
 import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'search', component: FlightSearchComponent },
   { path: 'shopping', component: ShoppingComponent },
   { path: 'flight-search', component: FlightSearchComponent},
+  { path: 'flight-grid', component: FightGridComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 ];

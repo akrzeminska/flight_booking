@@ -17,6 +17,7 @@ import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FlightSummaryComponent,
     ShoppingComponent,
     NotFoundComponent,
-    SignupComponent
+    SignupComponent,
+    FightGridComponent
   ],
   imports: [
     BrowserModule,
