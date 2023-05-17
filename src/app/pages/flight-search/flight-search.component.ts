@@ -30,34 +30,22 @@ export class FlightSearchComponent implements OnInit {
 
   searchFlights(): void {
     const fromValue = this.flightSearchForm.controls['from'].value;
+    const toValue = this.flightSearchForm.controls['to'].value;
+    const departureDateValue = this.flightSearchForm.controls['departureDate'].value;
+    const returnDateValue = this.flightSearchForm.controls['returnDate'].value;
+    const passengersValue = this.flightSearchForm.controls['passengers'].value;
+    const classValue = this.flightSearchForm.controls['class'].value;
 
     this.flightSearchService.setFromSearch(fromValue);
+    this.flightSearchService.setToSearch(toValue);
+    this.flightSearchService.setDepartureDateSearch(departureDateValue);
+    this.flightSearchService.setReturnDateSearch(returnDateValue);
+    this.flightSearchService.setPassengerSearch(passengersValue);
+    this.flightSearchService.setClassSearch(classValue);
+
     this.router.navigate(['/flight-grid']);
 
-    
-    // if (this.flightSearchForm.valid) {
-    //   const searchCriteria = this.flightSearchForm.value;
-    //   this.searchResults = this.performSearch(searchCriteria);
-    // } else {
-    //   console.log('Please fill in all required fields.');
-    // }
   }
-  // performSearch(criteria: any): any[] {
-  //   // Wykonaj logikę wyszukiwania lotów na podstawie przekazanych kryteriów
-  //   // Możesz skorzystać z metody filter i innych funkcji tablicowych
-  //   const filteredFlights = flights.filter((flight) => {
-  //     return (
-  //       flight.from.toLowerCase() === criteria.from.toLowerCase() &&
-  //       flight.to.toLowerCase() === criteria.to.toLowerCase() &&
-  //       flight.departureDate === criteria.departureDate &&
-  //       (flight.returnDate === criteria.returnDate || !criteria.returnDate) &&
-  //       flight.passengers >= criteria.passengers &&
-  //       flight.class === criteria.class &&
-  //       flight.baggage === criteria.baggage &&
-  //       (flight.seatSelection === criteria.seatSelection || !criteria.seatSelection)
-  //     );
-  //   });
-  //   return filteredFlights;
-  // }
+
 }
 

@@ -10,6 +10,7 @@ import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
+import { FlightDetailsComponent } from './pages/flight-details/flight-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'shopping', component: ShoppingComponent },
   { path: 'flight-search', component: FlightSearchComponent},
   { path: 'flight-grid', component: FightGridComponent },
+  { path: 'flight-details', component: FlightDetailsComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent }
 ];
