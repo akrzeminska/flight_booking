@@ -12,37 +12,38 @@
             <form [formGroup]="flightSearchForm" (ngSubmit)="searchFlights()">
               <div class="form-in">
                 <div class="first-row">
-                  <div class="from bcg" style="width: 40%">
-                    <label><i class="fas fa-plane-departure"></i> From:</label>
+                  <div class="input-field" style="width: 40%">
+                    <label><span><i class="fas fa-plane-departure p-2"></i></span>From:</label>
                     <input type="text" formControlName="from">
                   </div>
-                  <div class="icon bcg"><i class="fa-solid fa-arrow-right-arrow-left" style="color: #ffff"></i></div>
-                  <div class="to bcg" style="width: 45%">
-                    <label><i class="fas fa-plane-arrival"></i> To:</label>
+                  <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left p-2" style="color: #ffff"></i></div>
+                  <div class="input-field" style="width: 45%">
+                    <label><span><i class="fas fa-plane-arrival p-2"></i></span>  To:</label>
                     <input type="text" formControlName="to">
                   </div>
                 </div>
                 <div class="second-row">
-                  <div class="departure bcg" style="width: 45%">
-                    <label><i class="fas fa-calendar-alt"></i> Departure:</label>
+                  <div class="input-field" style="width: 45%">
+                    <label><span><i class="fas fa-calendar-alt p-2"></i></span>  Departure:</label>
                     <input type="date" formControlName="departureDate">
                   </div>
-                  <div class="return bcg" style="width: 45%">
-                    <label><i class="fas fa-calendar-alt"></i> Return:</label>
+                  <div class="input-field" style="width: 45%">
+                    <label><span><i class="fas fa-calendar-alt p-2"></i></span>  Return:</label>
                     <input type="date" formControlName="returnDate">
                   </div>
                 </div>
                 <div class="third-row">
-                  <div class="passengers bcg" style="width: 45%">
-                    <label><i class="fas fa-user"></i> Passengers:</label>
+                  <div class="input-field" style="width: 45%">
+                    <label><span><i class="fas fa-user p-2"></i></span>  Passengers:</label>
                     <input type="number" formControlName="passengers">
                   </div>
-                  <div class="class bcg" style="width: 45%">
-                    <label><i class="fas fa-plane"></i> Class:</label>
+                  <div class="input-field" style="width: 45%">
+                    <label><span><i class="fas fa-plane p-2"></i></span>  Class:</label>
                     <select formControlName="class">
-                      <option value="economy"> Economy</option>
-                      <option value="business"> Business</option>
-                      <option value="first"> First</option>
+                      <option value="" disabled selected>Choose</option>
+                      <option value="economy"> Economy </option>
+                      <option value="business"> Business </option>
+                      <option value="first"> First </option>
                     </select>
                   </div>
                 </div>

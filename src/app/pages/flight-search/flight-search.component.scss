@@ -45,7 +45,7 @@ $grey2-accent-color: #383949;
                 border-radius: 5px;
                 h3 {
                     padding-bottom: 30px;
-                    font-size: 2em;
+                    font-size: 1.5em;
                     font-weight: bold;
                 }
             }
@@ -65,29 +65,36 @@ $grey2-accent-color: #383949;
                     
                     .fa-arrow-right-arrow-left {
                         padding: 9px;
-                        font-size: 1.4em;
+                        font-size: 1.2em;
                         background-color: $red-color;
                         border-radius: 4px;
                     }
-
-                    i {
-                        padding: 0px 4px 0px 4px;
+                    .input-field {
+                        border-radius: 5px;
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                        background-color: #f5f5f5;
                     }
-    
-                    input, select, label {
-                        padding: 6px;
-                        font-size: 1.1em;
+                    
+                    span {
+                        color: $red-color;
+                    }
+                    label {
+                        width: 70%;
+                    }
+                    input, select {
+                        padding-left: 5px;
                         cursor: pointer;
                         border: none;
                         outline: none;
-                        box-shadow: none;
-                        background-color: $light-grey-color;
+                        width: 100%;
+                        background-color: #f5f5f5;
                     }
-                    input, select {
-                        width: 190px;
-                    }
-                    .bcg {
-                        background-color: $light-grey-color;
+
+                    input[type="date"], select {
+                        color:$navy-accent-color;
+                        font-size: 1em;
                     }
                 }
             }   
