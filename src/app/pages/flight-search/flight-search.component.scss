@@ -3,6 +3,7 @@ $rosy-color: #FE6587;
 $white-color: #FFFF;
 
 $navy-accent-color: #15294b;
+$light-grey-color: #f5f5f5;
 $grey-accent-color: #868A9A;
 $grey2-accent-color: #383949;
 
@@ -17,35 +18,93 @@ $grey2-accent-color: #383949;
 .section {
     color: $navy-accent-color;
     .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        width: 1300px;
+        height: 500px;
+        background-color: $white-color;
+        box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
+        border-radius: 22px;
 
-    width: 1300px;
-    height: 500px;
-    background-color: $white-color;
-    box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
-    border-radius: 22px;
-    
-        img {
-            border-radius: 20px;
-            width: 250px;
-            height: 250px;
-        }
-    
-        .form-group, label {
-            padding: 5px;
+        .img {
+            display: flex; justify-content: center; align-items: center;
+            padding: 50px;
         }
 
-        .btn {
-        color: $white-color;
-        width: 500px;
-        background-color: #ff5156;
-        border-color: #ff5156;
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .title {
+                text-align: center;
+                border-radius: 5px;
+                h3 {
+                    padding-bottom: 30px;
+                    font-size: 2em;
+                    font-weight: bold;
+                }
+            }
+
+            .form-in {
+                padding: 10px;
+                border: 2px solid #ebebeb;
+                border-radius: 6px;
+                box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
+
+                .first-row, .second-row, .third-row {
+                    display: flex;
+                    // flex-wrap: wrap;
+                    padding: 15px;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    .fa-arrow-right-arrow-left {
+                        padding: 9px;
+                        font-size: 1.4em;
+                        background-color: $red-color;
+                        border-radius: 4px;
+                    }
+
+                    i {
+                        padding: 0px 4px 0px 4px;
+                    }
+    
+                    input, select, label {
+                        padding: 6px;
+                        font-size: 1.1em;
+                        cursor: pointer;
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                        background-color: $light-grey-color;
+                    }
+                    input, select {
+                        width: 190px;
+                    }
+                    .bcg {
+                        background-color: $light-grey-color;
+                    }
+                }
+            }   
+
+            .btn {
+                transition: transform .3s;
+                margin-top: 30px;
+                color: $white-color;
+                width: 800px;
+                font-size: 1.5em;
+                background-color:$red-color;
+                border-color: $red-color;
+            }
+
+            .btn:hover {
+                transform: scale(1.03);
+            }
         }
-   
     }
 }

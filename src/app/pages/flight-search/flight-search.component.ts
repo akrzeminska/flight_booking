@@ -24,9 +24,7 @@ export class FlightSearchComponent implements OnInit {
       departureDate: ['', Validators.required],
       returnDate: [''],
       passengers: ['', Validators.required],
-      class: ['', Validators.required],
-      baggage: ['', Validators.required],
-      seatSelection: ['']
+      class: ['', Validators.required]
     });
   }
 
