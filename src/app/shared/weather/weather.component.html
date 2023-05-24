@@ -1,0 +1,8 @@
+<div class="weather">
+    <p>Current date: <span>{{ currentDate }}</span></p>
+    <p>Current time: <span>{{ currentTime }}</span></p>
+    <div *ngIf="weatherData">
+      <p>City: <span>{{ weatherData.name }}</span></p>
+      <p>Temperature: <span>{{ weatherData.main.temp | temperature:'Celsius' }}</span></p>
+    </div>
+  </div>

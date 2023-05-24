@@ -16,11 +16,13 @@ import { FlightSummaryComponent } from './pages/flight-summary/flight-summary.co
 import { ShoppingComponent } from './pages/shopping/shopping.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TestPostsComponent } from './pages/test-posts/test-posts.component';
 import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
+import { WeatherComponent } from './shared/weather/weather.component';
+import { TemperaturePipe } from './pipes/temperature.pipe';
 
 @NgModule({
   declarations: [
@@ -39,13 +41,16 @@ import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
     NotFoundComponent,
     SignupComponent,
     FightGridComponent,
-    TestPostsComponent
+    TestPostsComponent,
+    WeatherComponent, 
+    TemperaturePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

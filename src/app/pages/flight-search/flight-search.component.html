@@ -2,13 +2,14 @@
     <div class="section">  
         <div class="form">
           <div class="img">
+            <app-weather></app-weather>
             <img src="../assets/img/icon_book_flight.jpg" alt="">
+            
           </div>
           <div class="text">
             <div class="title">
               <h3>Search Flight</h3>
             </div>
-           
             <form [formGroup]="flightSearchForm" (ngSubmit)="searchFlights()">
               <div class="form-in">
                 <div class="first-row">
