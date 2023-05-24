@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'flight-search', component: FlightSearchComponent},
   { path: 'flight-grid', component: FightGridComponent },
   { path: 'flight-details', component: FlightDetailsComponent },
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
 
