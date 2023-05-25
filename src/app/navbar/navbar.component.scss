@@ -6,15 +6,11 @@ $navy-accent-color: #15294b;
 $grey-accent-color: #868A9A;
 $grey2-accent-color: #383949;
 
-*, *::before, *::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 .nav {
     text-transform: uppercase;
- 
+    .nav-link {
+        padding-top: 5px;
+    }
     a {
         padding: 0px 12px;
     }
@@ -47,7 +43,7 @@ $grey2-accent-color: #383949;
         padding: 5px;
     }
     .btn {
-        margin: 2px;
+        margin: 4px;
     }
 }
 

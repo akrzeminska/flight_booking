@@ -43,7 +43,6 @@ export class FlightSearchService {
   }
 
   public getSearchedFlights() : Flight[] {
-    debugger
     let result : Flight[] = [];
     if (this.fromSearch) {
       result = this.flights.filter(flight => flight.from === this.fromSearch);
