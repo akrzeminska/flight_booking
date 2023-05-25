@@ -14,7 +14,8 @@ export class FightGridComponent implements OnInit {
   constructor(public fs: FlightSearchService) { }
 
   ngOnInit(): void {
-    this.rows = this.fs.getAllFlights();
+    //this.rows = this.fs.getAllFlights();
+    debugger
     this.searchedRows = this.fs.getSearchedFlights();
   }
 }

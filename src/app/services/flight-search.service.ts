@@ -17,8 +17,8 @@ export class FlightSearchService {
 
   constructor() { 
     this.flights = [
-      { id: 1, from: 'Gdansk', to: 'Viena', departureDate: '2023-05-21', returnDate: '2023-05-25', passengers: 2, class: 'Economy' },
-      { id: 2, from: 'Viena', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
+      { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
+      { id: 2, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
       { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' }
     ];
   }
@@ -45,9 +45,9 @@ export class FlightSearchService {
   public getSearchedFlights() : Flight[] {
     let result : Flight[] = [];
     if (this.fromSearch) {
-      result = this.flights.filter(flight => flight.from === this.fromSearch);
+      result = this.flights.filter(flight => flight.from.toLowerCase() === this.fromSearch.toLowerCase());
     } if (this.toSearch) {
-      result = result.filter(flight => flight.to === this.toSearch);
+      result = result.filter(flight => flight.to.toLowerCase() === this.toSearch.toLowerCase());
     } if (this.departureDateSearch) {
       result = result.filter(flight => flight.departureDate === this.departureDateSearch);
     } if (this.returnDateSearch) {
@@ -55,7 +55,7 @@ export class FlightSearchService {
     } if (this.passengersSearch) {
       result = result.filter(flight => flight.passengers === this.passengersSearch);
     } if (this.classSearch) {
-      result = result.filter(flight => flight.class === this.classSearch);
+      result = result.filter(flight => flight.class.toLowerCase() === this.classSearch.toLowerCase());
     }
       return result;
   } 
@@ -66,6 +66,8 @@ export class FlightSearchService {
   }
 
   public getFlightsFrom(from: string) : Flight [] {
+    console.log(from);
+    console.log(this.flights.filter(f => f.from === from))
     return this.flights.filter(f => f.from === from);
   }
 }
