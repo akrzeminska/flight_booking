@@ -1,5 +1,6 @@
 .weather {
     p {
+      display: inline-block;
       margin: 10px;
       font-size: 0.8em;
     }
@@ -7,4 +8,6 @@
         font-weight: bold;
         padding-left: 2px;
     }
+   
   }
+  

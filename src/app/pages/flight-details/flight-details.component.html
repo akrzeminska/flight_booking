@@ -1,5 +1,50 @@
 
 
 <div class="container">
-    <h3>Orzeł wylądował!</h3>
+    <div class="details">
+        <div class="panel-heading"><h3>Flight Details</h3></div>
+        <form>
+            <div class="form-group pt-3">
+                <div class="input-field">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="firstName" type="text" placeholder="FirstName">
+                </div>
+            </div>
+            <small>*FirstName is required</small>
+            <div class="form-group pt-3">
+                <div class="input-field">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="lastName" type="text" placeholder="LastName">
+                </div>
+            </div>
+            <small>*LastName is required</small>
+            <div class="form-group pt-3">
+                <div class="input-field">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="email" type="text" placeholder="Email">
+                </div>
+            </div>
+            <small>*Email is required</small>
+            <div class="form-group pt-3">
+                <div class="input-field">
+                    <span class="fa fa-user p-2"></span>
+                    <input formControlName="userName" type="text" placeholder="Username">
+                </div>
+            </div>
+            <small>*UserName is required</small>
+            <div class="form-group pt-3">
+                <div class="input-field">
+                    <span class="fa fa-lock p-2"></span>
+                    <input formControlName="password" placeholder="Password">
+                    <span></span>
+                </div>
+                <small>*Password is required</small>
+                
+            </div>
+        </form>
+    <div class="loading-spinner"></div>
+
+    <button type="order" class="btn btn-block mt-4 w-100">Order</button>
+    </div>
+    <div class="planes"></div>
 </div>
