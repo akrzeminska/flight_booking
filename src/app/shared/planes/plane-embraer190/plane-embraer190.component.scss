@@ -10,18 +10,19 @@
  .plane {
 	 margin: 20px auto;
 	 max-width: 250px;
+     
 }
  .cockpit {
 	 height: 250px;
 	 position: relative;
 	 overflow: hidden;
 	 text-align: center;
-	 border-bottom: 5px solid #ebebeb;
+	 border-bottom: 5px solid rgba($color: #ffffff, $alpha: 0.7);
      
      .plane-name {
-        padding-top: 120px;
+        padding-top: 100px;
         color: #383949;
-
+        
         img {
             width: 20%;
             height: 20%;
@@ -37,8 +38,10 @@
 	 height: 500px;
 	 width: 100%;
 	 border-radius: 50%;
-	 border-right: 5px solid #ebebeb;
-	 border-left: 5px solid #ebebeb;
+	 border-right: 5px solid rgba($color: #ffffff, $alpha: 0.7);
+	 border-left: 5px solid rgba($color: #ffffff, $alpha: 0.7);
+    //  background-color: rgba($color: #ffffff, $alpha: 0.7);
+    
 }
  .cockpit h1 {
 	 width: 60%;
@@ -68,8 +71,9 @@
 	 right: 0;
 }
  .fuselage {
-	 border-right: 5px solid #ebebeb;
-	 border-left: 5px solid #ebebeb;
+	 border-right: 5px solid rgba($color: #ffffff, $alpha: 0.7);
+	 border-left: 5px solid rgba($color: #ffffff, $alpha: 0.7);
+     background-color: rgba($color: #ffffff, $alpha: 0.7);
 }
  ol {
 	 list-style: none;
