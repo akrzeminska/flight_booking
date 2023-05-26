@@ -22,7 +22,7 @@ $grey2-accent-color: #383949;
         text-align: center;
 
       .panel-heading {
-        padding: 20px;
+        padding: 30px;
         font-size: 1.8em;
         font-weight: bold;
       }
@@ -63,12 +63,14 @@ $grey2-accent-color: #383949;
                     border: none;
                     outline: none;
                     width: 100%;
+                    font-weight: bold;
                 }
                 
               }
               .cost {
                 font-size: 1.5em;
                 padding: 20px;
+                
               }
           }         
           
@@ -93,13 +95,22 @@ $grey2-accent-color: #383949;
             }
         }
 
-        .btn {
+        .btn-order {
             color: #ffff;
             // width: 400px;
             background-color: #ff5156;
             border-color: #ff5156;
             font-size: 1.2em;
+            margin-top: 10px;
         }
+        .btn-clear {
+          color: $navy-accent-color;
+          // width: 400px;
+          background-color: #ebebeb;
+          border-color: #ebebeb;
+          font-size: 1.2em;
+          margin-top: 40px;
+      }
         
         &::-webkit-scrollbar {
             width: 4px; /* Szerokość suwaka */
@@ -119,6 +130,12 @@ $grey2-accent-color: #383949;
         font-size: 0.8em;
         color: $red-color;
       
+      }
+      .summary-cost {
+        background-color: #ebebeb;
+        // margin: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
       }
     }
 
