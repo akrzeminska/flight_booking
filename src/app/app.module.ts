@@ -23,6 +23,7 @@ import { TestPostsComponent } from './pages/test-posts/test-posts.component';
 import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 import { WeatherComponent } from './shared/weather/weather.component';
 import { TemperaturePipe } from './pipes/temperature.pipe';
+import { PlaneEmbraer190Component } from './shared/planes/plane-embraer190/plane-embraer190.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { TemperaturePipe } from './pipes/temperature.pipe';
     FightGridComponent,
     TestPostsComponent,
     WeatherComponent, 
-    TemperaturePipe
+    TemperaturePipe, PlaneEmbraer190Component
   ],
   imports: [
     BrowserModule,
