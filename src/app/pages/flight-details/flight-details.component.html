@@ -1,50 +1,77 @@
 
-
 <div class="container">
     <div class="details">
         <div class="panel-heading"><h3>Flight Details</h3></div>
-        <form>
-            <div class="form-group pt-3">
-                <div class="input-field">
-                    <span class="fa fa-user p-2"></span>
-                    <input formControlName="firstName" type="text" placeholder="FirstName">
-                </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fas fa-plane-departure p-2"></span>
+                <h6 class="option-subtitle">Origin:</h6>
+                <div class="option-data">Warsaw</div>
+                <div class="loading-spinner"></div>
+            </div> 
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fas fa-plane-arrival p-2"></span>
+                <h6 class="option-subtitle">Destination:</h6>
+                <div class="option-data">Vienna</div>
+                <div class="loading-spinner"></div>
+            </div> 
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fas fa-calendar-alt p-2"></span>
+                <h6 class="option-subtitle">Departure:</h6>
+                <div class="option-data">25-05-2023</div>
+                <div class="loading-spinner"></div>
             </div>
-            <small>*FirstName is required</small>
-            <div class="form-group pt-3">
-                <div class="input-field">
-                    <span class="fa fa-user p-2"></span>
-                    <input formControlName="lastName" type="text" placeholder="LastName">
-                </div>
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fas fa-calendar-alt p-2"></span>
+                <h6 class="option-subtitle">Return:</h6>
+                <div class="option-data">25-05-2023</div>
+                <div class="loading-spinner"></div>
             </div>
-            <small>*LastName is required</small>
-            <div class="form-group pt-3">
-                <div class="input-field">
-                    <span class="fa fa-user p-2"></span>
-                    <input formControlName="email" type="text" placeholder="Email">
-                </div>
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fa fa-user p-2"></span>
+                <h6 class="option-subtitle">Passengers:</h6>
+                <div class="option-data">2</div>
+                <div class="loading-spinner"></div>
             </div>
-            <small>*Email is required</small>
-            <div class="form-group pt-3">
-                <div class="input-field">
-                    <span class="fa fa-user p-2"></span>
-                    <input formControlName="userName" type="text" placeholder="Username">
-                </div>
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fas fa-plane p-2"></span>
+                <h6 class="option-subtitle">Class:</h6>
+                <div class="option-data">Economy</div>
+                <div class="loading-spinner"></div>
             </div>
-            <small>*UserName is required</small>
-            <div class="form-group pt-3">
-                <div class="input-field">
-                    <span class="fa fa-lock p-2"></span>
-                    <input formControlName="password" placeholder="Password">
-                    <span></span>
-                </div>
-                <small>*Password is required</small>
-                
+        </div>
+        <div class="option">
+            <div class="option-container">
+                <span class="fa fa-user p-2"></span>
+                <h6 class="option-subtitle">Baggage:</h6>
+                <div class="option-data">
+                    <select formControlName="baggage">
+                    <option value="choose" disabled selected>Choose</option>
+                    <option value="cabin"> Cabin </option>
+                    <option value="cabin-checked"> Cabin & checked </option>
+                  </select></div>
             </div>
-        </form>
-    <div class="loading-spinner"></div>
-
-    <button type="order" class="btn btn-block mt-4 w-100">Order</button>
+        </div>
+        <small>* Selection is required</small>
+        <div class="option">
+            <div class="option-container">
+                <span class="fa fa-user p-2"></span>
+                <h6 class="option-subtitle cost-title">Cost:</h6>
+                <div class="option-data cost">300 $</div>
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    <button type="order" class="btn btn-block mt-4 w-100">Order tickets</button>
     </div>
     <div class="planes">
         <div class="planes-details"><app-plane-embraer190></app-plane-embraer190></div>
