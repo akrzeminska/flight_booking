@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight-details',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./flight-details.component.scss']
 })
 export class FlightDetailsComponent {
+  
+  constructor(private router: Router) { }
 
+  ngOnInit(): void {
+    
+  }
+  redirectToLogin(path: string) {
+    this.router.navigate(['/login']);
+  }
 }
+

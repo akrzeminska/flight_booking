@@ -54,7 +54,7 @@ $grey2-accent-color: #383949;
               }
               .option-data {
                 padding-left: 30px;
-                color: $red-color;
+                color: $grey2-accent-color;
                 font-weight: bold;
     
                   select {
@@ -70,6 +70,8 @@ $grey2-accent-color: #383949;
               .cost {
                 font-size: 1.5em;
                 padding: 20px;
+                color: $red-color;
+
                 
               }
           }         
@@ -140,14 +142,14 @@ $grey2-accent-color: #383949;
     }
 
     .planes {
-        overflow-y: auto;
+        overflow: auto;
         flex-basis: 70%;
         padding: 20px;
         max-height: 100vh;
         // background-color: #ffff;
         box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.5);
-        // border-radius: 0px 0px 0px 0px;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url(../../../assets/img/airplane-859545.jpg);
+        border-radius: 0px 22px 22px 0px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url(../../../assets/img/background_airplane_large.png);
         // background-color: #ebebeb;
         background-position: center;
         background-size: cover;
