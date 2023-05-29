@@ -7,11 +7,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   type: string = "password";
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   loginForm!: FormGroup;
+  username : string = '';
+  password: string = '';
   
   constructor(private fb: FormBuilder) {
 
@@ -53,5 +54,5 @@ export class LoginComponent implements OnInit {
           this.validateAllFormFields(control)
       }
     })
-  }
+  } 
 }
