@@ -55,7 +55,7 @@
                 <span class="fa fa-suitcase p-2"></span>
                 <h6 class="option-subtitle">Baggage:</h6>
                 <div class="option-data">
-                    <select formControlName="baggage">
+                    <select>
                     <option value="choose" disabled selected>Choose</option>
                     <option value="cabin"> Cabin </option>
                     <option value="cabin-checked"> Cabin & checked </option>
@@ -72,7 +72,7 @@
             </div>
         </div>
     <button type="clear" class="btn btn-clear btn-block w-100">Clear seats</button>
-    <button type="order" class="btn btn-order btn-block w-100"(click)="redirectToLogin('login')">Order tickets</button>
+    <button type="order" class="btn btn-order btn-block w-100"(click)="redirectTo()">Order tickets</button>
     </div>
     <div class="planes">
         <div class="planes-details"><app-plane-embraer190></app-plane-embraer190></div>

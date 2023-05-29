@@ -13,8 +13,8 @@ export class FlightDetailsComponent {
   ngOnInit(): void {
     
   }
-  redirectToLogin(path: string) {
-    this.router.navigate(['/login']);
+  redirectTo() {
+    this.router.navigate(['/flight-summary']);
   }
 }
 
