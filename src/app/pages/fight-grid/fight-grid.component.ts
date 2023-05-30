@@ -30,4 +30,8 @@ export class FightGridComponent implements OnInit {
   redirectToDetails(path: string) {
     this.router.navigate(['/flight-details']);
   }
+
+  countFreeSeats(flight: Flight) {
+    return flight.totalSeatsCount - flight.reservedSeats.length;
+  }
 }
