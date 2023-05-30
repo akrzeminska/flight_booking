@@ -4,7 +4,6 @@ export interface Flight {
   from: string;
   to: string;
   departureDate: string;
-  returnDate: string;
   class: string;
 
 }

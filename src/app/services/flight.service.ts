@@ -12,19 +12,19 @@ export class FlightService {
 
   constructor() { 
     this.flights = [
-      { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(0), returnDate: this.getDateShiftedByDays(6*30), passengers: 2, class: 'Economy' },
-      { id: 2, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
-      { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
-      { id: 4, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
-      { id: 5, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
-      { id: 6, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
-      { id: 7, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
-      { id: 8, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
-      { id: 9, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
-      { id: 10, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
-      { id: 11, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
-      { id: 12, from: 'Paris', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
-      { id: 13, from: 'Antoniów', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
+      { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(1), passengers: 2, class: 'Economy' },
+      { id: 2, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(5),  passengers: 2, class: 'Economy' },
+      { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: this.getDateShiftedByDays(10), passengers: 2, class: 'Economy' },
+      { id: 4, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(18), passengers: 2, class: 'Economy' },
+      { id: 5, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(25), passengers: 2, class: 'Economy' },
+      { id: 6, from: 'Berlin', to: 'Gdansk', departureDate: this.getDateShiftedByDays(30), passengers: 2, class: 'Economy' },
+      { id: 7, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(40), passengers: 2, class: 'Economy' },
+      { id: 8, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(45), passengers: 2, class: 'Economy' },
+      { id: 9, from: 'Berlin', to: 'Gdansk', departureDate: this.getDateShiftedByDays(2*30), passengers: 2, class: 'Economy' },
+      { id: 10, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(3*30), passengers: 2, class: 'Economy' },
+      { id: 11, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(4*30), passengers: 2, class: 'Economy' },
+      { id: 12, from: 'Paris', to: 'Gdansk', departureDate: this.getDateShiftedByDays(5*30), passengers: 2, class: 'Economy' },
+      { id: 13, from: 'Antoniów', to: 'Gdansk', departureDate: this.getDateShiftedByDays(6*30), passengers: 2, class: 'Economy' },
     ];
   }  
 
@@ -58,8 +58,8 @@ export class FlightService {
       result = result.filter(flight => flight.to.toLowerCase() === this.searchCriteria.to.toLowerCase());
     } if (this.searchCriteria.departureDate) {
       result = result.filter(flight => flight.departureDate === this.searchCriteria.departureDate);
-    } if (this.searchCriteria.returnDate) {
-      result = result.filter(flight => flight.returnDate === this.searchCriteria.returnDate);
+    // } if (this.searchCriteria.returnDate) {
+    //   result = result.filter(flight => flight.returnDate === this.searchCriteria.returnDate);
     } if (this.searchCriteria.passengers) {
       result = result.filter(flight => flight.passengers === this.searchCriteria.passengers);
     } if (this.searchCriteria.class) {

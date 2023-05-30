@@ -54,6 +54,10 @@ export class FlightSearchComponent implements OnInit {
 
   }
 
+  showOneWayTicketAlert() {
+    alert('Only one way tickets available.');
+  }
+
   private getValueFromControl(controlName: string) : string {
     return this.flightSearchForm.controls[controlName].value;
   }
