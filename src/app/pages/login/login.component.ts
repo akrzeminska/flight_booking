@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate([queryParams.redirect])
           });
           alert('Login success!')
-        } else {
+        } else {    
           alert('User not found. Try again or go for user registration.');
         }
       });

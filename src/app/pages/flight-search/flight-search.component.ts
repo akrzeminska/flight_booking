@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+
 import { flights } from './flights';
 import { FlightSearchService } from 'src/app/services/flight-search.service';
 import { Route, Router } from '@angular/router';
@@ -42,6 +42,11 @@ export class FlightSearchComponent implements OnInit {
     this.flightSearchService.setReturnDateSearch(returnDateValue);
     this.flightSearchService.setPassengerSearch(passengersValue);
     this.flightSearchService.setClassSearch(classValue);
+
+    if (returnDateValue && returnDateValue < departureDateValue) {
+      alert('You cannot select a return date earlier than the departure date')
+      return;
+    }
 
     this.router.navigate(['/flight-grid']);
 
