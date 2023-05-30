@@ -13,8 +13,8 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isUserLoggedIn() {
-    console.log('zmienić to na return this.isLoggedIn');
-    return true;
+    // console.log('zmienić to na return true');
+    return this.isLoggedIn;
   }  
   
   checkCredentials(username: string, password: string) : Observable<boolean> {
