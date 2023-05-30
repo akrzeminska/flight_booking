@@ -59,7 +59,7 @@ $grey2-accent-color: #383949;
     
                   select {
                     cursor: pointer;
-                    color: $red-color;
+                    color: $grey2-accent-color;
                     border: none;
                     outline: none;
                     width: 100%;
@@ -69,7 +69,7 @@ $grey2-accent-color: #383949;
               }
               .cost {
                 font-size: 1.5em;
-                padding: 10px;
+                padding: 20px;
                 color: $red-color;
               }
           }         

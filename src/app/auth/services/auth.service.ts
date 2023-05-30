@@ -13,17 +13,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isUserLoggedIn() {
-    return this.isLoggedIn;
+    console.log('zmienić to na return this.isLoggedIn');
+    return true;
   }  
   
   checkCredentials(username: string, password: string) : Observable<boolean> {
     return this.http.get<UsersData>(this.usersUrl).pipe(
       map((usersData) => 
-      {
-        // console.log(usersData);
-        this.isLoggedIn = usersData.users.some((user) => user.username === username && user.password === password);
-        return this.isLoggedIn;
-      }
+        {
+          // console.log(usersData);
+          this.isLoggedIn = usersData.users.some((user) => user.username === username && user.password === password);
+          return this.isLoggedIn;
+        }
       )
     );
   }
