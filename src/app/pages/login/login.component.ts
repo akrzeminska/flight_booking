@@ -45,8 +45,9 @@ export class LoginComponent implements OnInit {
           this.activatedRoute.queryParams.subscribe((queryParams: any) => {
             this.router.navigate([queryParams.redirect])
           });
+          alert('Login success!')
         } else {
-          alert('Your user information is incorrect. Try again or go for user registration.');
+          alert('User not found. Try again or go for user registration.');
         }
       });
     } else {
