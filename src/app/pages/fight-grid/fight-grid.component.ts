@@ -27,8 +27,8 @@ export class FightGridComponent implements OnInit {
   //   { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' }
   // ];
   }
-  redirectToDetails(path: string) {
-    this.router.navigate(['/flight-details']);
+  redirectToDetails(path: string, flightId: number) {
+    this.router.navigate([path], { queryParams: { flightId }});
   }
 
   countFreeSeats(flight: Flight) {

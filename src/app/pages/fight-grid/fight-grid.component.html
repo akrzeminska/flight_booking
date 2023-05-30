@@ -25,7 +25,7 @@
       <td>{{countFreeSeats(row)}}</td>
       <td>{{row.class}}</td>
       <td class="details-buttons"><button type="details" class="btn btn-details btn-block"
-          (click)="redirectToDetails('flight-details')">Show details</button></td>
+          (click)="redirectToDetails('flight-details', row.id)">Show details</button></td>
     </tr>
 
   </table>
