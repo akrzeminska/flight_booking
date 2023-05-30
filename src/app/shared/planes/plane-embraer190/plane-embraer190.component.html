@@ -12,18 +12,18 @@
         <ol class="cabin fuselage">
             <li class="row row--1">
                 <ol class="seats" type="A">
-                    <li class="seat">
+                    <li [ngClass]=" { 'reserved' : isReserved('1A'), 'seat': true}">
                         <input type="checkbox" class="oneSeat" id="1A" />
                         <label for="1A">1A</label>
                     </li>
-                    <li class="seat">
+                    <li [ngClass]=" { 'reserved' : isReserved('1B'), 'seat': true}">
                         <input type="checkbox" class="oneSeat" id="1B" />
                         <label for="1B">1B</label>
-                    <li class="seat">
+                    <li [ngClass]=" { 'reserved' : isReserved('1C'), 'seat': true}">
                         <input type="checkbox" class="oneSeat" id="1C" />
                         <label for="1C">1C</label>
                     </li>
-                    <li class="seat">
+                    <li [ngClass]=" { 'reserved' : isReserved('1D'), 'seat': true}">
                         <input type="checkbox" class="oneSeat" id="1D" />
                         <label for="1D">1D</label>
                     </li>
@@ -208,7 +208,7 @@
                     </li>
                 </ol>
             </li>
-            
+
         </ol>
         <div class="exit exit--back fuselage">
         </div>

@@ -1,14 +1,15 @@
-
 <div class="container">
     <div class="details">
-        <div class="panel-heading"><h3>Flight Details</h3></div>
+        <div class="panel-heading">
+            <h3>Flight Details</h3>
+        </div>
         <div class="option">
             <div class="option-container">
                 <span class="fas fa-plane-departure p-2"></span>
                 <h6 class="option-subtitle">Origin:</h6>
                 <div class="option-data">Warsaw</div>
                 <div class="loading-spinner"></div>
-            </div> 
+            </div>
         </div>
         <div class="option">
             <div class="option-container">
@@ -16,7 +17,7 @@
                 <h6 class="option-subtitle">Destination:</h6>
                 <div class="option-data">Vienna</div>
                 <div class="loading-spinner"></div>
-            </div> 
+            </div>
         </div>
         <div class="option">
             <div class="option-container">
@@ -56,10 +57,11 @@
                 <h6 class="option-subtitle">Baggage:</h6>
                 <div class="option-data">
                     <select>
-                    <option value="choose" disabled selected>Choose</option>
-                    <option value="cabin"> Cabin </option>
-                    <option value="cabin-checked"> Cabin & checked </option>
-                  </select></div>
+                        <option value="choose" disabled selected>Choose</option>
+                        <option value="cabin"> Cabin </option>
+                        <option value="cabin-checked"> Cabin & checked </option>
+                    </select>
+                </div>
             </div>
         </div>
         <small>* Selection is required</small>
@@ -71,13 +73,14 @@
                 <div class="currency">
                     <app-currency-converter></app-currency-converter>
                 </div>
-                
+
             </div>
         </div>
-    <button type="clear" class="btn btn-clear btn-block w-100">Clear seats</button>
-    <button type="order" class="btn btn-order btn-block w-100" (click)="redirectTo('/flight-summary')">Order tickets</button>
+        <button type="clear" class="btn btn-clear btn-block w-100">Clear seats</button>
+        <button type="order" class="btn btn-order btn-block w-100" (click)="redirectTo('/flight-summary')">Order
+            tickets</button>
     </div>
     <div class="planes">
-        <div class="planes-details"><app-plane-embraer190></app-plane-embraer190></div>
+        <div class="planes-details"><app-plane-embraer190 [flightId]="flightId"></app-plane-embraer190></div>
     </div>
 </div>

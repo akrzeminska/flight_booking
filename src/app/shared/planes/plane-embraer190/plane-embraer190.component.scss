@@ -112,7 +112,7 @@
      color:#ebebeb;
 	 border-radius: 5px;
 	 cursor: pointer;
-}
+} 
  .seat .active {
 	 display: block;
 	 position: relative;
@@ -125,6 +125,10 @@
 	 background: #ff5156;
 	 border-radius: 5px;
 	 cursor: pointer;
+}
+ 
+.reserved {
+	font-size: larger;
 }
 
 .seat:hover {

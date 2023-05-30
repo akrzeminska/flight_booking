@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
@@ -9,12 +9,13 @@ import { FlightService } from 'src/app/services/flight.service';
 export class PlaneEmbraer190Component {
   title__seatList = 'Lista miejsc';
   dataSource = ['A', 'B', 'C', 'D'];
-  flightId!: number;
+  @Input() flightId!: number;
 
   constructor(private flightService: FlightService) { }
 
   isReserved(seat: string) : boolean {
-    return this.flightService.isReserved(this.flightId, seat)
+    const result = this.flightService.isReserved(+this.flightId, seat);
+    return result;
   }
 }
 
