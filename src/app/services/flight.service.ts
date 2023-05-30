@@ -12,7 +12,7 @@ export class FlightService {
 
   constructor() { 
     this.flights = [
-      { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
+      { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(0), returnDate: this.getDateShiftedByDays(6*30), passengers: 2, class: 'Economy' },
       { id: 2, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
       { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
       { id: 4, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
@@ -27,6 +27,12 @@ export class FlightService {
       { id: 13, from: 'Antoniów', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
     ];
   }  
+
+  private getDateShiftedByDays(daysToAdd: number) {
+    const result = new Date();
+    result.setDate(result.getDate() + daysToAdd)
+    return result.toJSON().slice(0, 10);
+  }
 
   getAvailableFromFlights() : string[] {
     return this.flights.map(flight => flight.from).filter(this.onlyUnique).sort();
