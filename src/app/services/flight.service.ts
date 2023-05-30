@@ -4,7 +4,7 @@ import { Flight } from '../models/Flight';
 @Injectable({
   providedIn: 'root'
 })
-export class FlightSearchService {
+export class FlightService {
   flights: Flight[] = []
   
   fromSearch: string = '';

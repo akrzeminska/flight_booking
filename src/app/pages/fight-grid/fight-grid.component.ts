@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Flight } from 'src/app/models/Flight';
-import { FlightSearchService } from 'src/app/services/flight-search.service';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
   selector: 'app-fight-grid',
@@ -13,7 +13,7 @@ export class FightGridComponent implements OnInit {
   searchedRows: Flight[] = [];
   searchedRows2!: { id: number; from: string; to: string; departureDate: string; returnDate: string; passengers: number; class: string; }[];
 
-  constructor(public fs: FlightSearchService, private router: Router) { }
+  constructor(public fs: FlightService, private router: Router) { }
 
   ngOnInit(): void {
     //this.rows = this.fs.getAllFlights();

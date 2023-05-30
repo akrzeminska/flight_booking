@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { flights } from './flights';
-import { FlightSearchService } from 'src/app/services/flight-search.service';
+import { FlightService } from 'src/app/services/flight.service';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class FlightSearchComponent implements OnInit {
   searchResults: any[] = []; // Tablica przechowująca wyniki wyszukiwania lotów
 
 
-  constructor(private fb: FormBuilder, private flightSearchService: FlightSearchService, private router: Router) {}
+  constructor(private fb: FormBuilder, private flightSearchService: FlightService, private router: Router) {}
 
   ngOnInit(): void {
     this.flightSearchForm = this.fb.group({
