@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit {
   username : string = '';
   password: string = '';
   
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authServce: AuthService,
+     private router: Router, private activatedRoute: ActivatedRoute) {
 
   }
   ngOnInit(): void {
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   hideShowPass(){
-    // console.log('oko działa')
+    // console.log('it works!')
     this.isText = !this.isText;
     this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
     this.isText ? this.type = "text" : this.type = "password";
@@ -34,13 +37,21 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if(this.loginForm.valid) {
       // send the object to database
-      console.log(this.loginForm.value);
+      // console.log(this.loginForm.value);
+      const username : string = this.loginForm.controls['username'].value;
+      const password : string = this.loginForm.controls['password'].value;
+      this.authServce.checkCredentials(username, password).subscribe((isLoggedIn) => {
+        if (isLoggedIn) {
+          this.activatedRoute.queryParams.subscribe((queryParams: any) => {
+            this.router.navigate([queryParams.redirect])
+          });
+        } else {
+          alert('Your user information is incorrect. Try again or go for user registration.');
+        }
+      });
     } else {
-      //throw the error using toaster and with required fields
-      // console.log('Form is not valid');
-
       this.validateAllFormFields(this.loginForm);
-      alert("Yor form is invalid");
+      alert("Your form is invalid");
     }
   }
 

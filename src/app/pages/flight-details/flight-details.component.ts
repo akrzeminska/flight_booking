@@ -13,8 +13,8 @@ export class FlightDetailsComponent {
   ngOnInit(): void {
     
   }
-  redirectTo() {
-    this.router.navigate(['/flight-summary']);
+  redirectTo(path: string) {
+    this.router.navigate([path]);
   }
 }
 
