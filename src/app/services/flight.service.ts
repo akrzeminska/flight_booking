@@ -8,15 +8,37 @@ import { FlightSearchCriteria } from '../models/FlightSearchCriteria';
 export class FlightService {
 
   flights: Flight[] = []
-  searchCriteria!: FlightSearchCriteria;
+  searchCriteria: FlightSearchCriteria = {} as FlightSearchCriteria;
 
   constructor() { 
     this.flights = [
       { id: 1, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
       { id: 2, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
-      { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' }
+      { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
+      { id: 4, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
+      { id: 5, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
+      { id: 6, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
+      { id: 7, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
+      { id: 8, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
+      { id: 9, from: 'Berlin', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
+      { id: 10, from: 'Gdansk', to: 'Vienna', departureDate: '2023-05-25', returnDate: '2023-05-26', passengers: 2, class: 'Economy' },
+      { id: 11, from: 'Vienna', to: 'Roma', departureDate: '2023-05-26', returnDate: '2023-05-30', passengers: 2, class: 'Economy' },
+      { id: 12, from: 'Paris', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
+      { id: 13, from: 'Antoniów', to: 'Gdansk', departureDate: '2023-06-01', returnDate: '2023-06-09', passengers: 2, class: 'Economy' },
     ];
   }  
+
+  getAvailableFromFlights() : string[] {
+    return this.flights.map(flight => flight.from).filter(this.onlyUnique).sort();
+  }
+
+  getAvailableToFlights() : string[] {
+    return this.flights.map(flight => flight.to).filter(this.onlyUnique).sort();
+  }
+
+  private onlyUnique(value: any, index: number, array: any[]) {
+    return array.indexOf(value) === index;
+  }
   
   setCriteria(flightSearchCriteria: FlightSearchCriteria) {
     this.searchCriteria = flightSearchCriteria;

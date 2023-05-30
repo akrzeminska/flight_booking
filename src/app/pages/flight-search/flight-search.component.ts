@@ -13,8 +13,9 @@ import { FlightSearchCriteria } from 'src/app/models/FlightSearchCriteria';
 export class FlightSearchComponent implements OnInit {
   flightSearchForm!: FormGroup;
   searchResults: any[] = []; // Tablica przechowująca wyniki wyszukiwania lotów
-  
-  constructor(private fb: FormBuilder, private flightSearchService: FlightService, private router: Router) {}
+  availableFroms: string[] = [];
+
+  constructor(private fb: FormBuilder, private flightService: FlightService, private router: Router) {}
 
   ngOnInit(): void {
     this.flightSearchForm = this.fb.group({
@@ -25,6 +26,8 @@ export class FlightSearchComponent implements OnInit {
       passengers: ['', Validators.required],
       class: ['', Validators.required]
     });
+
+    this.availableFroms = this.flightService.getAvailableFromFlights();
   }
 
 
@@ -38,7 +41,7 @@ export class FlightSearchComponent implements OnInit {
       class: this.getValueFromControl('class')
     }
 
-    this.flightSearchService.setCriteria(searchCriteria);
+    this.flightService.setCriteria(searchCriteria);
 
     //TODO: zamienić na custom validator na form grupie
     
