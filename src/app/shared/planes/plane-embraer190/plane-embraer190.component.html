@@ -23,7 +23,7 @@
         </ng-container>
       </ol>
       <div class="exit exit-back fuselage">
-        <button type="clear" class="btn btn-clear btn-block">Clear seats</button>
+        <button type="clear" class="btn btn-clear btn-block" (click)="clearSeats()">Clear seats</button>
       </div>
       <div class="d-flex flex-wrap">
         <div class="places gap-5" *ngFor="let divData of seats"></div>

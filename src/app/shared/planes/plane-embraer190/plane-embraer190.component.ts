@@ -27,7 +27,6 @@ export class PlaneEmbraer190Component {
         if (index !== -1) {
           this.selectedSeats.splice(index, 1);
         }
-        
       } else {
         this.selectedSeats.push(seat);
       }
@@ -38,4 +37,12 @@ export class PlaneEmbraer190Component {
   isSelected(seat: string): boolean {
     return this.selectedSeats.includes(seat);
   }
+
+  clearSeats(): void {
+    this.selectedSeats = [];
+    console.log(this.selectedSeats);
+  }
+
+
+
 }
