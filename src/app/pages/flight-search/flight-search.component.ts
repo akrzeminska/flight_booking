@@ -14,6 +14,7 @@ export class FlightSearchComponent implements OnInit {
   flightSearchForm!: FormGroup;
   searchResults: any[] = []; // Tablica przechowująca wyniki wyszukiwania lotów
   availableFroms: string[] = [];
+  availableTos: string[] = [];
 
   constructor(private fb: FormBuilder, private flightService: FlightService, private router: Router) {}
 
@@ -28,6 +29,7 @@ export class FlightSearchComponent implements OnInit {
     });
 
     this.availableFroms = this.flightService.getAvailableFromFlights();
+    this.availableTos = this.flightService.getAvailableToFlights();
   }
 
 

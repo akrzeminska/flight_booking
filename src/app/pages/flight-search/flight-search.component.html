@@ -16,6 +16,7 @@
               <div class="input-field" style="width: 40%">
                 <label><span><i class="fas fa-plane-departure p-2"></i></span>Origin:</label>
                 <select formControlName="from">
+                  <option value="" disabled selected>Choose</option>
                   <option *ngFor="let availableFrom of availableFroms" [ngValue]="availableFrom">
                     {{ availableFrom }}
                   </option>
@@ -25,7 +26,12 @@
               <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left p-2" style="color: #ffff"></i></div>
               <div class="input-field" style="width: 45%">
                 <label><span><i class="fas fa-plane-arrival p-2"></i></span> Destination:</label>
-                <input type="text" formControlName="to">
+                <select formControlName="to">
+                  <option value="" disabled selected>Choose</option>
+                  <option *ngFor="let availableTo of availableTos" [ngValue]="availableTo">
+                    {{ availableTo }}
+                  </option>
+                </select>
               </div>
             </div>
             <div class="second-row">

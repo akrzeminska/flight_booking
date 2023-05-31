@@ -7,8 +7,9 @@ import { FlightService } from 'src/app/services/flight.service';
   styleUrls: ['./plane-embraer190.component.scss']
 })
 export class PlaneEmbraer190Component {
-  title__seatList = 'Lista miejsc';
-  dataSource = ['A', 'B', 'C', 'D'];
+  seats: string[] = ['A', 'B', 'C', 'D'];
+  rows: number[] = Array.from({ length: 10 }, (_, index) => index + 1);
+
   @Input() flightId!: number;
 
   constructor(private flightService: FlightService) { }

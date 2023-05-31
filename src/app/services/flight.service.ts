@@ -16,7 +16,7 @@ export class FlightService {
       , reservedSeats: ['1A', '1B', '2D'] },
       { id: 2, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(5), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
-      { id: 3, from: 'Berlin', to: 'Gdansk', departureDate: this.getDateShiftedByDays(10), class: 'Economy', totalSeatsCount: 40
+      { id: 3, from: 'Cracow', to: 'Gdansk', departureDate: this.getDateShiftedByDays(10), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
       { id: 4, from: 'Gdansk', to: 'Vienna', departureDate: this.getDateShiftedByDays(18), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
@@ -34,9 +34,9 @@ export class FlightService {
       , reservedSeats: ['1A', '1B', '2D'] },
       { id: 11, from: 'Vienna', to: 'Roma', departureDate: this.getDateShiftedByDays(4*30), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
-      { id: 12, from: 'Paris', to: 'Gdansk', departureDate: this.getDateShiftedByDays(5*30), class: 'Economy', totalSeatsCount: 40
+      { id: 12, from: 'Boston', to: 'Gdansk', departureDate: this.getDateShiftedByDays(5*30), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
-      { id: 13, from: 'Antoniów', to: 'Gdansk', departureDate: this.getDateShiftedByDays(6*30), class: 'Economy', totalSeatsCount: 40
+      { id: 13, from: 'Boston', to: 'Gdansk', departureDate: this.getDateShiftedByDays(6*30), class: 'Economy', totalSeatsCount: 40
       , reservedSeats: ['1A', '1B', '2D'] },
     ];
   }  
