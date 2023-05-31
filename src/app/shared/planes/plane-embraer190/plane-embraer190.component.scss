@@ -43,6 +43,18 @@ $grey2-accent-color: #383949;
 	.exit {
 		position: relative;
 		height: 50px;
+
+		.btn-clear {
+			color: $navy-accent-color;
+			background-color: #ebebeb;
+			border-color: #ebebeb;
+			margin-top: 5px;
+			margin-left: 70px;
+		}
+		.btn-clear:hover {
+			background-color: #ff5156;
+			color: #ebebeb;
+		  }
     }
 
    .exit:before, .exit:after {
