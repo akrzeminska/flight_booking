@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-shopping',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping.component.scss']
 })
 export class ShoppingComponent {
+  
+
+  constructor() { }
+
 
 }

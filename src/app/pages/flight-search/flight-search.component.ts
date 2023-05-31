@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { FlightService } from 'src/app/services/flight.service';
 import { Router } from '@angular/router';
 import { FlightSearchCriteria } from 'src/app/models/FlightSearchCriteria';
