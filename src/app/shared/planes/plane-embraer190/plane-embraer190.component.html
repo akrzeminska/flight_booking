@@ -1,29 +1,31 @@
 <div class="container">
     <div class="plane">
-        <div class="cockpit">
-            <div class="plane-name">
-                <h4>Embraer 190</h4>
-                <p class="note">Select seats</p>
-            </div>
+      <div class="cockpit">
+        <div class="plane-name">
+          <h4>Embraer 190</h4>
+          <p class="note">Select seats</p>
         </div>
-        <div class="exit exit-front fuselage"></div>
-        <ol class="cabin fuselage">
-            <ng-container *ngFor="let row of rows; let rowIndex = index">
-                <li class="row row{{ rowIndex + 1 }}">
-                    <ol class="seats" type="A">
-                        <ng-container *ngFor="let seat of seats; let seatIndex = index">
-                            <li class="seat">
-                                <input type="checkbox" class="oneSeat" id="{{ rowIndex + 1 }}{{ seat }}" />
-                                <label [ngClass]="{ 'reserved': isReserved(rowIndex + 1 + seat) }" for="{{ rowIndex + 1 }}{{ seat }}">{{ rowIndex + 1 }}{{ seat }}</label>
-                            </li>
-                        </ng-container>
-                    </ol>
+      </div>
+      <div class="exit exit-front fuselage"></div>
+      <ol class="cabin fuselage">
+        <ng-container *ngFor="let row of rows; let rowIndex = index">
+          <li class="row row{{ rowIndex + 1 }}">
+            <ol class="seats" type="A">
+              <ng-container *ngFor="let seat of seats; let seatIndex = index">
+                <li class="seat">
+                  <input type="checkbox" class="oneSeat" id="{{ rowIndex + 1 }}{{ seat }}" />
+                  <label [ngClass]="{ 'reserved': isReserved(rowIndex + 1 + seat), 'active': isSelected(rowIndex + 1 + seat) }"
+                    for="{{ rowIndex + 1 }}{{ seat }}" (click)="selectSeats(rowIndex + 1 + seat)">{{ rowIndex + 1 }}{{ seat }}</label>
                 </li>
-            </ng-container>
-        </ol>
-        <div class="exit exit-back fuselage"></div>
-        <div class="d-flex flex-wrap">
-            <div class="places gap-5" *ngFor="let divData of seats"></div>
-        </div>
+              </ng-container>
+            </ol>
+          </li>
+        </ng-container>
+      </ol>
+      <div class="exit exit-back fuselage"></div>
+      <div class="d-flex flex-wrap">
+        <div class="places gap-5" *ngFor="let divData of seats"></div>
+      </div>
     </div>
-</div>
+  </div>
+  

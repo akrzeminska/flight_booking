@@ -47,16 +47,16 @@ $grey2-accent-color: #383949;
 
    .exit:before, .exit:after {
 	content: 'EXIT';
-	font-size: 14px;
-	line-height: 18px;
-	padding: 0px 2px;
-	font-family: 'Arial Narrow', Arial, sans-serif;
-	display: block;
-	position: absolute;
-	background: #ff5156;
-	color: #ebebeb;
-	top: 50%;
-	transform: translate(0, -50%);
+		font-size: 14px;
+		line-height: 18px;
+		padding: 0px 2px;
+		font-family: 'Arial Narrow', Arial, sans-serif;
+		display: block;
+		position: absolute;
+		background: #ff5156;
+		color: #ebebeb;
+		top: 50%;
+		transform: translate(0, -50%);
 	}
 	.exit:before {
 		left: 0;
@@ -99,7 +99,7 @@ $grey2-accent-color: #383949;
 			font-weight: bold;
 			line-height: 1.5rem;
 			padding: 4px 0;
-			background-color: $grey2-accent-color;
+			background-color: $navy-accent-color;
 			color:#ebebeb;
 			border-radius: 5px;
 			cursor: pointer;
