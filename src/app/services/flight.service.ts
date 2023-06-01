@@ -7,8 +7,8 @@ import { FlightGeneratorService } from './flight-generator.service';
   providedIn: 'root'
 })
 export class FlightService {
-
-  flights: Flight[] = []
+  
+  flights: Flight[] = [];
   searchCriteria: FlightSearchCriteria = {} as FlightSearchCriteria;
 
   constructor(public flightGeneratorService: FlightGeneratorService) { 
@@ -68,4 +68,9 @@ export class FlightService {
     console.log(this.flights.filter(f => f.from === from))
     return this.flights.filter(f => f.from === from);
   }
+
+  getFlightById(flightId: number): Flight {
+    return this.flights.filter((flight) => flight.id === flightId)[0];
+  }
+
 }

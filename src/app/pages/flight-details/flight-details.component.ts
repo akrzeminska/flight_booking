@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Flight } from 'src/app/models/Flight';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
   selector: 'app-flight-details',
@@ -9,14 +11,15 @@ import { Subscription } from 'rxjs';
 })
 export class FlightDetailsComponent implements OnInit, OnDestroy {
   
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
   flightId!: number;
   sub!: Subscription;
-
+  flight!: Flight;
 
   ngOnInit(): void {
     this.sub = this.route.queryParams.subscribe((params: any) => {
-      this.flightId = params.flightId;
+      this.flightId = +params.flightId;
+      this.flight = this.flightService.getFlightById(this.flightId);
     })
   }
 
