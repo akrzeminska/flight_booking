@@ -23,6 +23,10 @@ $grey2-accent-color: #383949;
 		   color: #383949;
 		   opacity: 0.9; 
 		   z-index: 5; 
+
+		   p {
+			color: $red-color;
+		   }
 		}
    	}
 
