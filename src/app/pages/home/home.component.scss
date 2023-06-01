@@ -73,23 +73,23 @@ $grey2-accent-color: #383949;
     height: 200px;
     object-fit: contain;
     padding: 10px;
-    border-radius: 22px 22px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);
   }
 
   .btn {
     transition: transform 0.3s;
     color: #fff;
-    width: 100%;
+    width: 965px;
     background-color: #ff5156;
     border-color: #ff5156;
     font-size: 1.3em;
-    margin-top: 20px;
-    border-radius: 22px;
+    margin: 20px 0px 50px 0px;
+
   }
 
   .btn:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
   }
 }
 

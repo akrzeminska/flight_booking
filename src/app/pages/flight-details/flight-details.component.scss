@@ -89,12 +89,18 @@ $grey2-accent-color: #383949;
         }
 
         .btn-order {
+            transition: transform 0.3s;  
             color: #ffff;
             background-color: #ff5156;
             border-color: #ff5156;
             font-size: 1.2em;
             margin-top: 30px;
         }
+
+        .btn:hover {
+          transform: scale(1.03);
+        }
+
         
         &::-webkit-scrollbar {
             width: 4px;

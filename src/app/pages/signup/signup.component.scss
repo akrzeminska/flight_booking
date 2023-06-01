@@ -62,11 +62,16 @@ $grey2-accent-color: #383949;
     }
 
     .btn {
+      transition: transform 0.3s;
       color: $white-color;
       // width: 400px;
       background-color: #ff5156;
       border-color: #ff5156;
       font-size: 1.2em;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
     }
 
     .input-field {
