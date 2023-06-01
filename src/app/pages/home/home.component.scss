@@ -19,9 +19,8 @@ $grey2-accent-color: #383949;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-//   height: 100vh;
-//   height: 500px;
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   background-color: #ffff;
   border-radius: 22px;
   box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);
@@ -42,7 +41,7 @@ $grey2-accent-color: #383949;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    // margin-top: 20px;
+    margin-top: 20px;
   }
 
   .card {
@@ -97,10 +96,11 @@ $grey2-accent-color: #383949;
 @media (max-width: 992px) {
   .section {
     padding: 20px;
-    width: 900px;
-    margin-top: 400px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 50px;
   }
-  
+
   .btn {
     height: auto;
     margin-top: 30px;
@@ -110,8 +110,9 @@ $grey2-accent-color: #383949;
 
 @media (max-width: 375px) {
   .section {
-    padding: 0px 10px;
-    width: 300px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
   }
 
   .card {
