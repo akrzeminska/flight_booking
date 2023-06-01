@@ -8,7 +8,7 @@ export class FlightGeneratorService {
   private cities: string[] = ['Cracow', 'Vienna', 'Boston'];
   private seatRows: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   private seatColumns: string[] = ['A', 'B', 'C', 'D'];
-  private classes: string[] = ['economy', 'business'];
+  private classes: string[] = ['economy'];
 
   generateFlights(startDate: Date, monthsAhead: number): Flight[] {
     const flights: Flight[] = [];
