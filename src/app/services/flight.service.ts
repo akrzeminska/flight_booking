@@ -73,4 +73,8 @@ export class FlightService {
     return this.flights.filter((flight) => flight.id === flightId)[0];
   }
 
+  getPassengersCount(): number {
+    return this.searchCriteria.passengers;
+  }
+
 }

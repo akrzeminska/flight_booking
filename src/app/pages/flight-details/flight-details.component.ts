@@ -14,6 +14,7 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   sub!: Subscription;
   flight!: Flight;
   loading: boolean = true;
+  passengers!: number;
 
   constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
   
@@ -23,6 +24,7 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
       this.flightId = +params.flightId;
       setTimeout(() => {
         this.flight = this.flightService.getFlightById(this.flightId);
+        this.passengers = this.flightService.getPassengersCount();
         this.loading = false;
       }, 3000);
     })

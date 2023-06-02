@@ -31,8 +31,8 @@
             <div class="option-container">
                 <span class="fa fa-user p-2"></span>
                 <h6 class="option-subtitle">Passengers:</h6>
-                <div class="option-data">2</div>
-                <div class="loading-spinner"></div>
+                <div class="option-data" *ngIf="!loading">{{ passengers }}</div>
+                <div class="loading-spinner" *ngIf="loading"></div>
             </div>
         </div>
         <div class="option">
