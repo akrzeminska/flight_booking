@@ -10,16 +10,21 @@ import { FlightService } from 'src/app/services/flight.service';
   styleUrls: ['./flight-details.component.scss']
 })
 export class FlightDetailsComponent implements OnInit, OnDestroy {
-  
-  constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
   flightId!: number;
   sub!: Subscription;
   flight!: Flight;
+  loading: boolean = true;
+
+  constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
+  
 
   ngOnInit(): void {
     this.sub = this.route.queryParams.subscribe((params: any) => {
       this.flightId = +params.flightId;
-      this.flight = this.flightService.getFlightById(this.flightId);
+      setTimeout(() => {
+        this.flight = this.flightService.getFlightById(this.flightId);
+        this.loading = false;
+      }, 3000);
     })
   }
 

@@ -7,34 +7,26 @@
             <div class="option-container">
                 <span class="fas fa-plane-departure p-2"></span>
                 <h6 class="option-subtitle">Origin:</h6>
-                <div class="option-data">{{flight.from}}</div>
-                <div class="loading-spinner"></div>
+                <div class="option-data" *ngIf="!loading">{{flight.from}}</div>
+                <div class="loading-spinner" *ngIf="loading"></div>
             </div>
         </div>
         <div class="option">
             <div class="option-container">
                 <span class="fas fa-plane-arrival p-2"></span>
                 <h6 class="option-subtitle">Destination:</h6>
-                <div class="option-data">Vienna</div>
-                <div class="loading-spinner"></div>
+                <div class="option-data" *ngIf="!loading">{{flight.to}}</div>
+                <div class="loading-spinner" *ngIf="loading"></div>
             </div>
         </div>
         <div class="option">
             <div class="option-container">
                 <span class="fas fa-calendar-alt p-2"></span>
                 <h6 class="option-subtitle">Departure:</h6>
-                <div class="option-data">25-05-2023</div>
-                <div class="loading-spinner"></div>
+                <div class="option-data" *ngIf="!loading">{{flight.departureDate}}</div>
+                <div class="loading-spinner" *ngIf="loading"></div>
             </div>
         </div>
-        <!-- <div class="option">
-            <div class="option-container">
-                <span class="fas fa-calendar-alt p-2"></span>
-                <h6 class="option-subtitle">Return:</h6>
-                <div class="option-data">25-05-2023</div>
-                <div class="loading-spinner"></div>
-            </div>
-        </div> -->
         <div class="option">
             <div class="option-container">
                 <span class="fa fa-user p-2"></span>
@@ -47,8 +39,8 @@
             <div class="option-container">
                 <span class="fas fa-plane p-2"></span>
                 <h6 class="option-subtitle">Class:</h6>
-                <div class="option-data">Economy</div>
-                <div class="loading-spinner"></div>
+                <div class="option-data" *ngIf="!loading">{{flight.class}}</div>
+                <div class="loading-spinner" *ngIf="loading"></div>
             </div>
         </div>
         <div class="option">
