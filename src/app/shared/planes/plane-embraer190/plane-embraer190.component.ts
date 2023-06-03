@@ -12,7 +12,7 @@ export class PlaneEmbraer190Component {
   selectedSeats: string[] = [];
 
   @Input() flightId!: number;
-  @Input() passengersCount!: number; //dla przekazania liczby pasażerów
+  @Input() passengersCount!: number; //przekazanie liczby pasażerów do graniczenia wyboru miejsc w samolocie
   @Output() selectedSeatsChange = new EventEmitter<string[]>();
 
   constructor(private flightService: FlightService) { }

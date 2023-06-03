@@ -17,6 +17,8 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   passengers!: number;
   baggage: string = 'choose';
   selectedSeats: string[] = [];
+  pricePerBaggage: number = 0;
+  totalPrice: number = 0;
 
   constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
   
@@ -50,6 +52,21 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   getSelectedBaggage(): void {
     console.log(this.baggage);
     console.log(this.flight.pricePerSeat);
+
+    if (this.baggage === 'cabin') {
+      this.pricePerBaggage = 50;
+    } else if (this.baggage === 'cabin-checked') {
+      this.pricePerBaggage = 120;
+    } else {
+      this.pricePerBaggage = 0;
+    }
+
+    this.updateTotalPrice();
+  }
+
+  private updateTotalPrice(): void {
+    this.totalPrice = this.selectedSeats.length * (this.flight.pricePerSeat + this.pricePerBaggage);
+    console.log(this.totalPrice);
   }
 
 }
