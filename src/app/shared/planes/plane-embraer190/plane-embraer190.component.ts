@@ -12,6 +12,7 @@ export class PlaneEmbraer190Component {
   selectedSeats: string[] = [];
 
   @Input() flightId!: number;
+  @Input() passengersCount!: number; //dla przekazania liczby pasażerów
   @Output() selectedSeatsChange = new EventEmitter<string[]>();
 
   constructor(private flightService: FlightService) { }
@@ -29,10 +30,14 @@ export class PlaneEmbraer190Component {
           this.selectedSeats.splice(index, 1);
         }
       } else {
-        this.selectedSeats.push(seat);
+        if (this.selectedSeats.length < this.passengersCount) {
+          this.selectedSeats.push(seat);
+        } else {
+          alert('The maximum number of seats has been selected.');
+        }
       }
       console.log(this.selectedSeats);
-      this.selectedSeatsChange.emit(this.selectedSeats); // Emituj zaktualizowaną tablicę
+      this.selectedSeatsChange.emit(this.selectedSeats);
     }
   }
 

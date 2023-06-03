@@ -73,6 +73,6 @@
             tickets</button>
     </div>
     <div class="planes">
-        <div class="planes-details"><app-plane-embraer190 [flightId]="flightId" (selectedSeatsChange)="onSelectedSeatsChange($event)"></app-plane-embraer190></div>
+        <div class="planes-details"><app-plane-embraer190 [flightId]="flightId" [passengersCount]="passengers" (selectedSeatsChange)="onSelectedSeatsChange($event)"></app-plane-embraer190></div>
     </div>
 </div>
