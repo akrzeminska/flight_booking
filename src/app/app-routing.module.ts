@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'aboutus', component: NotFoundComponent },
-  { path: 'sales', component: NotFoundComponent },
+  { path: 'sales', component: SalesComponent },
   { path: 'contact', component: NotFoundComponent },
   { path: 'search', component: FlightSearchComponent },
   { path: 'shopping', component: FlightSummaryComponent, canActivate: [AuthGuard] },

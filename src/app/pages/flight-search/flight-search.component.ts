@@ -23,7 +23,7 @@ export class FlightSearchComponent implements OnInit {
       to: ['', Validators.required],
       departureDate: ['', Validators.required],
       returnDate: [''],
-      passengers: ['', Validators.required],
+      passengers: ['', Validators.required, Validators.min(1), Validators.max(40)],
       class: ['', Validators.required]
     });
 
@@ -31,9 +31,12 @@ export class FlightSearchComponent implements OnInit {
     this.availableTos = this.flightService.getAvailableToFlights();
   }
 
-
   searchFlights(): void {
-     const searchCriteria: FlightSearchCriteria = { 
+    if (this.flightSearchForm.invalid || this.areCitiesEqual()) {
+      this.showFormErrorAlert();
+      return;
+    }
+    const searchCriteria: FlightSearchCriteria = { 
       from: this.getValueFromControl('from'),
       to: this.getValueFromControl('to'),
       departureDate: this.getValueFromControl('departureDate'),
@@ -41,18 +44,8 @@ export class FlightSearchComponent implements OnInit {
       passengers: Number.parseInt(this.getValueFromControl('passengers')),
       class: this.getValueFromControl('class')
     }
-
     this.flightService.setCriteria(searchCriteria);
-
-    //TODO: zamienić na custom validator na form grupie
-    
-    // if (returnDateValue && returnDateValue < departureDateValue) {
-    //   alert('You cannot select a return date earlier than the departure date')
-    //   return;
-    // }
-
     this.router.navigate(['/flight-grid']);
-
   }
 
   showOneWayTicketAlert() {
@@ -62,5 +55,16 @@ export class FlightSearchComponent implements OnInit {
   private getValueFromControl(controlName: string) : string {
     return this.flightSearchForm.controls[controlName].value;
   }
+
+  showFormErrorAlert(): void {
+    alert('Form is not filled correctly.');
+  }
+
+  areCitiesEqual(): boolean {
+    const from = this.getValueFromControl('from');
+    const to = this.getValueFromControl('to');
+    return from === to;
+  }
+
 }
 

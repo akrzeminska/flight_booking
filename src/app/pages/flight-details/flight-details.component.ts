@@ -37,7 +37,7 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
         this.flight = this.flightService.getFlightById(this.flightId);
         this.passengers = this.flightService.getPassengersCount();
         this.loading = false;
-      }, 1000);
+      }, 3000);
     });
   }
 
