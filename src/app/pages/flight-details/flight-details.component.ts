@@ -46,7 +46,6 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   }
 
   redirectTo(path: string) {
-    // Przekazanie danych do serwisu
     this.flightService.updateReservedSeats(this.flightId, this.selectedSeats);
     this.router.navigate([path]);
   }
@@ -73,8 +72,12 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   }
 
   updateTotalPrice(): void {
-    this.totalPrice = this.selectedSeats.length * (this.flight.pricePerSeat + this.pricePerBaggage) / this.exchangeRate;
-    this.totalPrice = Math.round(this.totalPrice);
+    if (this.baggage === 'choose') {
+      this.totalPrice = 0;
+    } else {
+      this.totalPrice = this.selectedSeats.length * (this.flight.pricePerSeat + this.pricePerBaggage) / this.exchangeRate;
+      this.totalPrice = Math.round(this.totalPrice);
+    }
   }
 
   convertCurrency(currency: string): void {

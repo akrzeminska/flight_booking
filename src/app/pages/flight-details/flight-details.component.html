@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <small>* Selection is required</small>
+        <small *ngIf="baggage === 'choose'">*Selection is required!</small>
         <div class="option summary-cost">
             <div class="option-container">
                 <span class="fa fa-money p-2"></span>
