@@ -63,7 +63,7 @@
                 <h6 class="option-subtitle cost-title">Cost:</h6>
                 <div class="option-data cost">{{ totalPrice }}</div>
                 <div class="currency">
-                    <select id="currency">
+                    <select id="currency" [(ngModel)]="selectedCurrency" (change)="convertCurrency(selectedCurrency)">
                         <option value="PLN">PLN</option>
                         <option value="USD">USD</option>
                         <option value="EUR">EUR</option>

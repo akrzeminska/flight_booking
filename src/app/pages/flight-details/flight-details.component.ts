@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Flight } from 'src/app/models/Flight';
 import { FlightService } from 'src/app/services/flight.service';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'app-flight-details',
@@ -19,9 +20,15 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   selectedSeats: string[] = [];
   pricePerBaggage: number = 0;
   totalPrice: number = 0;
+  selectedCurrency: string = 'PLN';
+  exchangeRate: number = 1;
 
-  constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
-  
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private flightService: FlightService,
+    private currencyService: CurrencyService
+  ) { }
 
   ngOnInit(): void {
     this.sub = this.route.queryParams.subscribe((params: any) => {
@@ -30,8 +37,8 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
         this.flight = this.flightService.getFlightById(this.flightId);
         this.passengers = this.flightService.getPassengersCount();
         this.loading = false;
-      }, 2000);
-    })
+      }, 1000);
+    });
   }
 
   ngOnDestroy(): void {
@@ -43,10 +50,11 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
     this.flightService.updateReservedSeats(this.flightId, this.selectedSeats);
     this.router.navigate([path]);
   }
- 
+
   onSelectedSeatsChange(selectedSeats: string[]): void {
     this.selectedSeats = selectedSeats;
-    console.log(this.selectedSeats.length); // Wyciągnij długość tablicy   
+    console.log(this.selectedSeats.length); // Wyciągnij długość tablicy
+    this.updateTotalPrice();
   }
 
   getSelectedBaggage(): void {
@@ -64,10 +72,23 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
     this.updateTotalPrice();
   }
 
-  private updateTotalPrice(): void {
-    this.totalPrice = this.selectedSeats.length * (this.flight.pricePerSeat + this.pricePerBaggage);
-    console.log(this.totalPrice);
+  updateTotalPrice(): void {
+    this.totalPrice = this.selectedSeats.length * (this.flight.pricePerSeat + this.pricePerBaggage) / this.exchangeRate;
+    this.totalPrice = Math.round(this.totalPrice);
   }
 
+  convertCurrency(currency: string): void {
+    this.selectedCurrency = currency;
+    if (currency === 'PLN') {
+      this.exchangeRate = 1;
+      this.updateTotalPrice();
+      return;
+    } else {
+      this.currencyService.getExchangeRate(currency).subscribe(rate => {
+        this.exchangeRate = rate;
+        this.updateTotalPrice();
+      });
+    }   
+    
+  }
 }
-
