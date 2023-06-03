@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Flight } from 'src/app/models/Flight';
 import { FlightService } from 'src/app/services/flight.service';
@@ -46,12 +46,24 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   }
 
   redirectTo(path: string) {
+    const queryParams: Params = {
+      origin: this.flight.from,
+      destination: this.flight.to,
+      departureDate: this.flight.departureDate,
+      passengers: this.passengers,
+      class: this.flight.class,
+      seats: this.selectedSeats.join(','),
+      baggage: this.baggage,
+      cost: this.totalPrice,
+      currency: this.selectedCurrency
+    };
     this.flightService.updateReservedSeats(this.flightId, this.selectedSeats);
-    this.router.navigate([path]);
+    this.router.navigate([path], { queryParams });
   }
 
   onSelectedSeatsChange(selectedSeats: string[]): void {
     this.selectedSeats = selectedSeats;
+    console.log(this.selectedSeats);
     console.log(this.selectedSeats.length); // Wyciągnij długość tablicy
     this.updateTotalPrice();
   }

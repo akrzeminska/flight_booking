@@ -43,7 +43,9 @@ export class LoginComponent implements OnInit {
       this.authServce.checkCredentials(username, password).subscribe((isLoggedIn) => {
         if (isLoggedIn) {
           this.activatedRoute.queryParams.subscribe((queryParams: any) => {
-            this.router.navigate([queryParams.redirect])
+            this.router.navigateByUrl(queryParams.redirect)
+            //Zamiana navigate na navigatebyUrl.
+            //this.router.navigate([queryParams.redirect])
           });
           alert('Login success!')
         } else {    
