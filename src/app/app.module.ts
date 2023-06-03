@@ -24,7 +24,7 @@ import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 import { WeatherComponent } from './shared/weather/weather.component';
 import { TemperaturePipe } from './pipes/temperature.pipe';
 import { PlaneEmbraer190Component } from './shared/planes/plane-embraer190/plane-embraer190.component';
-import { CurrencyConverterComponent } from './shared/currency/currency-converter/currency-converter.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { CurrencyConverterComponent } from './shared/currency/currency-converter
     FightGridComponent,
     TestPostsComponent,
     WeatherComponent, 
-    TemperaturePipe, PlaneEmbraer190Component, CurrencyConverterComponent
+    TemperaturePipe, PlaneEmbraer190Component
   ],
   imports: [
     BrowserModule,

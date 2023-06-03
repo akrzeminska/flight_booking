@@ -63,7 +63,11 @@
                 <h6 class="option-subtitle cost-title">Cost:</h6>
                 <div class="option-data cost">{{ totalPrice }}</div>
                 <div class="currency">
-                    <app-currency-converter></app-currency-converter>
+                    <select id="currency">
+                        <option value="PLN">PLN</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
                 </div>
 
             </div>

@@ -124,6 +124,15 @@ $grey2-accent-color: #383949;
             margin-top: 20px;
             border-radius: 5px;
         }
+        #currency {
+            padding-top: 3px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: #ebebeb;
+            color: $red-color;
+            font-weight: bold;
+        }
     }
 
     .planes {
