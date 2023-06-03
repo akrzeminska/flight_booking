@@ -48,10 +48,10 @@
                 <span class="fa fa-suitcase p-2"></span>
                 <h6 class="option-subtitle">Baggage:</h6>
                 <div class="option-data">
-                    <select>
-                        <option value="choose" disabled selected>Choose</option>
-                        <option value="cabin"> Cabin </option>
-                        <option value="cabin-checked"> Cabin & checked </option>
+                    <select [(ngModel)]="baggage" (change)="getSelectedBaggage()">
+                        <option value="choose" disabled selected>choose</option>
+                        <option value="cabin"> cabin </option>
+                        <option value="cabin-checked"> cabin & checked </option>
                     </select>
                 </div>
             </div>
@@ -73,6 +73,6 @@
             tickets</button>
     </div>
     <div class="planes">
-        <div class="planes-details"><app-plane-embraer190 [flightId]="flightId"></app-plane-embraer190></div>
+        <div class="planes-details"><app-plane-embraer190 [flightId]="flightId" (selectedSeatsChange)="onSelectedSeatsChange($event)"></app-plane-embraer190></div>
     </div>
 </div>

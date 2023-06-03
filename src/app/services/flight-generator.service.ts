@@ -26,10 +26,12 @@ export class FlightGeneratorService {
             const flightDate = new Date(currentDateIterator).toJSON().slice(0, 10);
             const randomSeats = this.getRandomSeats();
             const randomClass = this.getRandomClass();
+            const randomPrice = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
 
             const flight : Flight = {
               id: i++, from: fromCity, to: toCity, departureDate: flightDate, reservedSeats: randomSeats, class: randomClass,
-              totalSeatsCount: 40,
+              totalSeatsCount: 40, 
+              pricePerSeat: randomPrice
             };
             flights.push(flight);
           }

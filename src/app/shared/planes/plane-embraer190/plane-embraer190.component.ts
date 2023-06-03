@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class PlaneEmbraer190Component {
   selectedSeats: string[] = [];
 
   @Input() flightId!: number;
+  @Output() selectedSeatsChange = new EventEmitter<string[]>();
 
   constructor(private flightService: FlightService) { }
 
@@ -31,6 +32,7 @@ export class PlaneEmbraer190Component {
         this.selectedSeats.push(seat);
       }
       console.log(this.selectedSeats);
+      this.selectedSeatsChange.emit(this.selectedSeats); // Emituj zaktualizowaną tablicę
     }
   }
 
@@ -40,9 +42,7 @@ export class PlaneEmbraer190Component {
 
   clearSeats(): void {
     this.selectedSeats = [];
-    console.log(this.selectedSeats);
+    // console.log(this.selectedSeats);
   }
-
-
 
 }

@@ -15,6 +15,8 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   flight!: Flight;
   loading: boolean = true;
   passengers!: number;
+  baggage: string = 'choose';
+  selectedSeats: string[] = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private flightService: FlightService) { }
   
@@ -26,7 +28,7 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
         this.flight = this.flightService.getFlightById(this.flightId);
         this.passengers = this.flightService.getPassengersCount();
         this.loading = false;
-      }, 3000);
+      }, 2000);
     })
   }
 
@@ -35,7 +37,20 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
   }
 
   redirectTo(path: string) {
+    // Przekazanie danych do serwisu
+    this.flightService.updateReservedSeats(this.flightId, this.selectedSeats);
     this.router.navigate([path]);
   }
+ 
+  onSelectedSeatsChange(selectedSeats: string[]): void {
+    this.selectedSeats = selectedSeats;
+    console.log(this.selectedSeats.length); // Wyciągnij długość tablicy   
+  }
+
+  getSelectedBaggage(): void {
+    console.log(this.baggage);
+    console.log(this.flight.pricePerSeat);
+  }
+
 }
 

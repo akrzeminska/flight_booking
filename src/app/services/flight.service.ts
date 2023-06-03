@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Flight } from '../models/Flight';
 import { FlightSearchCriteria } from '../models/FlightSearchCriteria';
 import { FlightGeneratorService } from './flight-generator.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ export class FlightService {
   
   flights: Flight[] = [];
   searchCriteria: FlightSearchCriteria = {} as FlightSearchCriteria;
+  
 
-  constructor(public flightGeneratorService: FlightGeneratorService) { 
+  constructor(public flightGeneratorService: FlightGeneratorService, private route: ActivatedRoute, private router: Router) { 
     const startDate = new Date();
     const monthsAhead = 6;
     this.flights = this.flightGeneratorService.generateFlights(startDate, monthsAhead);
@@ -74,7 +76,17 @@ export class FlightService {
   }
 
   getPassengersCount(): number {
+    if (!this.searchCriteria.passengers) {
+      this.router.navigate(['flight-search']);
+    }
     return this.searchCriteria.passengers;
+  }
+
+  updateReservedSeats(flightId: number, selectedSeats: string[]): void {
+    const flight = this.getFlightById(flightId);
+    if (flight) {
+      flight.reservedSeats.push(...selectedSeats);
+    }
   }
 
 }

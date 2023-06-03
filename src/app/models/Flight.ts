@@ -7,5 +7,5 @@ export interface Flight {
   class: string;
   reservedSeats: string[]
   totalSeatsCount: number
-
+  pricePerSeat: number;
 }
