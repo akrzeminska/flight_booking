@@ -6,85 +6,117 @@ $navy-accent-color: #15294b;
 $grey-accent-color: #868A9A;
 $grey2-accent-color: #383949;
 
-
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+  background-color: #ffff;
+  border-radius: 22px;
+  box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);
+
+  .title {
+    text-align: center;
+    color: $navy-accent-color;
+    padding-top: 50px;
+  }
+
+  .plane-icon {
+    font-size: 2em;
+    color: #15294b;
+  }
+
+  .card-group {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    // flex-wrap: wrap;
-    height: 100vh;
-    
-    height: 500px;
-    width: 1300px;
-    background-color: #ffff;
-    border-radius: 22px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .card {
+    transition: transform 0.3s;
+    height: 400px;
+    border: 1px solid rgba(134, 138, 154, 0.2);
+    border-radius: 15px;
+    flex: 0 0 300px;
+    margin: 10px;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card-title {
+    color: #ff5156;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .card-text {
+    font-size: 0.9em;
+    text-align: center;
+    padding: 5px;
+  }
+
+  img {
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
     box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);
+  }
 
-    .title {
-        text-align: center;
-        color: $navy-accent-color;
-        padding: 20px;
-    }
+  .btn {
+    transition: transform 0.3s;
+    color: #fff;
+    width: 965px;
+    background-color: #ff5156;
+    border-color: #ff5156;
+    font-size: 1.3em;
+    margin: 20px 0px 50px 0px;
 
-    .plane-icon {
-        font-size: 2em;
-        color: #15294b;
-    }
+  }
 
-    .card {
-        transition: transform .3s;
-        height: 400px;
-        // margin: 10px;
-        border: 1px solid rgba(134, 138, 154, 0.2);
-        border-radius: 15px;
-    }
+  .btn:hover {
+    transform: scale(1.03);
+  }
+}
 
-    .card:hover {
-        transform: scale(1.03);
-    }
+@media (max-width: 992px) {
+  .section {
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 50px;
+  }
 
-    .card-title {
-        color: #ff5156;
-        // font-weight: bold;
-        text-align: center;
-        padding: 10px;
-    }
-    .card-text {
-        font-size: 0.9em;
-        text-align: center;
-        padding: 5px;
-    }    
+  .btn {
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
 
-    img {
-        height: 200px;
-        object-fit: cover;
-        padding: 10px;
-        border-radius: 22px 22px 0px 0px;
-        box-shadow: 0px 0px 22px 0px rgba(134, 138, 154, 0.2);
-    }
-    .btn {
-        transition: transform .3s;
-        color: #fff;
-        height: 500px;
-        background-color: #ff5156;
-        border-color: #ff5156;
-        border-radius: 0px 20px 20px 0;
-        // text-decoration: underline;
-        font-size: 1.3em;
-    }
-    .btn:hover {
-        transform: scale(1.04);
-    }
+@media (max-width: 375px) {
+  .section {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
 
-
+  .card {
+    height: auto;
+    margin-bottom: 10px;
+  }
 }

@@ -1,1 +1,82 @@
-<p>flight-summary works!</p>
+<div class="container">
+    <div class="section">
+        <div class="details">
+            <div class="panel-heading">
+                <h3>Flight Summary</h3>
+            </div>
+            <div class="body-panel"> 
+                <div class="img">
+                    <img src="../assets/img/logo_plane.jpg" alt="">
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Origin:</div>
+                        <div class="option-data">{{ origin }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Destination:</div>
+                        <div class="option-data">{{ destination }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Departure date:</div>
+                        <div class="option-data">{{ departureDate }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Return date:</div>
+                        <div class="option-data">one way ticket</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Passengers:</div>
+                        <div class="option-data">{{ passengers }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Class:</div>
+                        <div class="option-data">{{ class }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Seats:</div>
+                        <div class="option-data">{{ seats }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle">Baggage:</div>
+                        <div class="option-data">{{ baggage }}</div>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="option-container">
+                        <div class="option-subtitle cost">Cost:</div>
+                        <div class="option-data cost">{{ cost }} {{ currency }}</div>
+                    </div>
+                </div>            
+                <div class="barcode"><img src="../assets/img/barcode.jpg" alt=""></div>
+                
+            </div>
+            <div class="button"><button type="submit" class="btn btn-block mt-4">Pay</button></div>
+        </div>   
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

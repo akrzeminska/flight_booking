@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FlightService } from 'src/app/services/flight.service';
 
 @Component({
   selector: 'app-plane-embraer190',
@@ -6,7 +7,45 @@ import { Component } from '@angular/core';
   styleUrls: ['./plane-embraer190.component.scss']
 })
 export class PlaneEmbraer190Component {
-  title__seatList = 'Lista miejsc';
-  dataSource = ['A', 'B', 'C', 'D'];
-}
+  seats: string[] = ['A', 'B', 'C', 'D'];
+  rows: number[] = Array.from({ length: 10 }, (_, index) => index + 1);
+  selectedSeats: string[] = [];
 
+  @Input() flightId!: number;
+  @Input() passengersCount!: number;
+  @Output() selectedSeatsChange = new EventEmitter<string[]>();
+
+  constructor(private flightService: FlightService) { }
+
+  isReserved(seat: string): boolean {
+    const result = this.flightService.isReserved(+this.flightId, seat);
+    return result;
+  }
+
+  selectSeats(seat: string): void {
+    if (!this.isReserved(seat)) {
+      if (this.isSelected(seat)) {
+        const index = this.selectedSeats.indexOf(seat);
+        if (index !== -1) {
+          this.selectedSeats.splice(index, 1);
+        }
+      } else {
+        if (this.selectedSeats.length < this.passengersCount) {
+          this.selectedSeats.push(seat);
+        } else {
+          alert('The maximum number of seats has been selected.');
+        }
+      }
+      this.selectedSeatsChange.emit(this.selectedSeats);
+    }
+  }
+
+  isSelected(seat: string): boolean {
+    return this.selectedSeats.includes(seat);
+  }
+
+  clearSeats(): void {
+    this.selectedSeats = [];
+  }
+
+}

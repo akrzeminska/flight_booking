@@ -12,20 +12,21 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 import { FlightDetailsComponent } from './pages/flight-details/flight-details.component';
 import { FlightSummaryComponent } from './pages/flight-summary/flight-summary.component';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'aboutus', component: AboutusComponent },
+  { path: 'aboutus', component: NotFoundComponent },
   { path: 'sales', component: SalesComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'contact', component: NotFoundComponent },
   { path: 'search', component: FlightSearchComponent },
-  { path: 'shopping', component: ShoppingComponent },
+  { path: 'shopping', component: NotFoundComponent },
   { path: 'flight-search', component: FlightSearchComponent},
   { path: 'flight-grid', component: FightGridComponent },
   { path: 'flight-details', component: FlightDetailsComponent },
-  { path: 'flight-summary', component: FlightSummaryComponent },
+  { path: 'flight-summary', component: FlightSummaryComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];

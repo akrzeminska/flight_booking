@@ -1,60 +1,68 @@
 <div class="container">
-    <div class="section">  
-        <div class="form">
-          <div class="img">
-            <app-weather></app-weather>
-            <img src="../assets/img/icon_book_flight.jpg" alt="">
-            
-          </div>
-          <div class="text">
-            <div class="title">
-              <h3>Search Flight</h3>
-            </div>
-            <form [formGroup]="flightSearchForm" (ngSubmit)="searchFlights()">
-              <div class="form-in">
-                <div class="first-row">
-                  <div class="input-field" style="width: 40%">
-                    <label><span><i class="fas fa-plane-departure p-2"></i></span>Origin:</label>
-                    <input type="text" formControlName="from">
-                  </div>
-                  <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left p-2" style="color: #ffff"></i></div>
-                  <div class="input-field" style="width: 45%">
-                    <label><span><i class="fas fa-plane-arrival p-2"></i></span>  Destination:</label>
-                    <input type="text" formControlName="to">
-                  </div>
-                </div>
-                <div class="second-row">
-                  <div class="input-field" style="width: 45%">
-                    <label><span><i class="fas fa-calendar-alt p-2"></i></span>  Departure:</label>
-                    <input type="date" formControlName="departureDate">
-                  </div>
-                  <div class="input-field" style="width: 45%">
-                    <label><span><i class="fas fa-calendar-alt p-2"></i></span>  Return:</label>
-                    <input type="date" formControlName="returnDate">
-                  </div>
-                </div>
-                <div class="third-row">
-                  <div class="input-field" style="width: 45%">
-                    <label><span><i class="fas fa-user p-2"></i></span>  Passengers:</label>
-                    <input type="number" formControlName="passengers">
-                  </div>
-                  <div class="input-field" style="width: 45%">
-                    <label><span><i class="fas fa-plane p-2"></i></span>  Class:</label>
-                    <select formControlName="class">
-                      <option value="" disabled selected>Choose</option>
-                      <option value="economy"> Economy </option>
-                      <option value="business"> Business </option>
-                      <option value="first"> First </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="button">
-                <button type="submit" class="btn slice">Search flights</button>
-              </div>
-            </form>
-           
-          </div>
+  <div class="section">
+    <div class="form">
+      <div class="img">
+        <app-weather></app-weather>
+        <img src="../assets/img/icon_book_flight.jpg" alt="">
+
+      </div>
+      <div class="text">
+        <div class="title">
+          <h3>Search Flight</h3>
         </div>
+        <form [formGroup]="flightSearchForm" (ngSubmit)="searchFlights()">
+          <div class="form-in">
+            <div class="first-row">
+              <div class="input-field" style="width: 40%">
+                <label><span><i class="fas fa-plane-departure p-2"></i></span>Origin:</label>
+                <select formControlName="from">
+                  <option value="" disabled selected>Choose</option>
+                  <option *ngFor="let availableFrom of availableFroms" [ngValue]="availableFrom">
+                    {{ availableFrom }}
+                  </option>
+                </select>
+              </div>
+              <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left p-2" style="color: #ffff"></i></div>
+              <div class="input-field" style="width: 45%">
+                <label><span><i class="fas fa-plane-arrival p-2"></i></span> Destination:</label>
+                <select formControlName="to">
+                  <option value="" disabled selected>Choose</option>
+                  <option *ngFor="let availableTo of availableTos" [ngValue]="availableTo">
+                    {{ availableTo }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="second-row">
+              <div class="input-field" style="width: 45%">
+                <label><span><i class="fas fa-calendar-alt p-2"></i></span> Departure:</label>
+                <input type="date" formControlName="departureDate">
+              </div>
+              <div class="input-field" style="width: 45%" (click)="showOneWayTicketAlert()">
+                <label><span><i class="fas fa-calendar-alt p-2"></i></span> Return:</label>
+                <input type="date" formControlName="returnDate">
+              </div>
+            </div>
+            <div class="third-row">
+              <div class="input-field" style="width: 45%">
+                <label><span><i class="fas fa-user p-2"></i></span> Passengers:</label>
+                <input type="number" formControlName="passengers">
+              </div>
+              <div class="input-field" style="width: 45%">
+                <label><span><i class="fas fa-plane p-2"></i></span> Class:</label>
+                <select formControlName="class">
+                  <option value="" disabled selected>Choose</option>
+                  <option value="economy"> Economy </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <button type="submit" class="btn slice">Search flights</button>
+          </div>
+        </form>
+
+      </div>
     </div>
+  </div>
 </div>

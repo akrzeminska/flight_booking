@@ -1,133 +1,156 @@
-* {
-	 box-sizing: border-box;
-}
- *:before, *:after {
-	 box-sizing: border-box;
-}
- html {
-	 font-size: 16px;
-}
- .plane {
-	 margin: 20px auto;
-	 max-width: 250px;
-     
-}
- .cockpit {
-	 height: 250px;
-	 position: relative;
-	 overflow: hidden;
-	 text-align: center;
-	 border-bottom: 5px solid #ebebeb;
-     
-     
-     .plane-name {
-        padding-top: 140px;
-        color: #383949;
-        opacity: 0.9; 
-        z-index: 5; 
-     }
-}
- .cockpit:before {
-	 content: '';
-	 display: block;
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 height: 500px;
-	 width: 100%;
-	 border-radius: 50%;
-	 border-right: 5px solid #ebebeb;
-	 border-left: 5px solid #ebebeb;
-     background-color: rgba($color: #ffffff, $alpha: 0.7);
-    
-}
- .cockpit h1 {
-	 width: 60%;
-	 margin: 100px auto 35px auto;
-}
- .exit {
-	 position: relative;
-	 height: 50px;
-}
- .exit:before, .exit:after {
-	 content: 'EXIT';
-	 font-size: 14px;
-	 line-height: 18px;
-	 padding: 0px 2px;
-	 font-family: 'Arial Narrow', Arial, sans-serif;
-	 display: block;
-	 position: absolute;
-	 background: #ff5156;
-	 color: #ebebeb;
-	 top: 50%;
-	 transform: translate(0, -50%);
-}
- .exit:before {
-	 left: 0;
-}
- .exit:after {
-	 right: 0;
-}
- .fuselage {
-	 border-right: 5px solid #ebebeb;
-	 border-left: 5px solid #ebebeb;
-     background-color: rgba($color: #ffffff, $alpha: 0.7);
-}
- ol {
-	 list-style: none;
-	 padding: 0;
-	 margin: 0;
-}
- .seats {
-	 display: flex;
-	 flex-direction: row;
-	 flex-wrap: nowrap;
-	 justify-content: flex-start;
-	 justify-content: center;
-}
- .seat {
-     transition: transform .3s;
-	 display: flex;
-	 flex: 0 0 16%;
-	 padding: 3px;
-	 position: relative;
-}
- .seat:nth-child(2) {
-	 margin-right: 50px;
-}
- .seat input[type='checkbox'] {
-	 position: absolute;
-	 opacity: 0;
-}
- .seat label {
-	 display: block;
-	 position: relative;
-	 width: 100%;
-	 text-align: center;
-	 font-size: 14px;
-	 font-weight: bold;
-	 line-height: 1.5rem;
-	 padding: 4px 0;
-	 background: #868a9a;
-     color:#ebebeb;
-	 border-radius: 5px;
-	 cursor: pointer;
-}
- .seat .active {
-	 display: block;
-	 position: relative;
-	 width: 100%;
-	 text-align: center;
-	 font-size: 14px;
-	 font-weight: bold;
-	 line-height: 1.5rem;
-	 padding: 4px 0;
-	 background: #ff5156;
-	 border-radius: 5px;
-	 cursor: pointer;
-}
+$red-color: #ff5156;
+$rosy-color: #FE6587;
+$white-color: #FFFF;
 
-.seat:hover {
-    scale: 1.03;
-    background: #ff5156;
+$navy-accent-color: #15294b;
+$light-grey-color: #f5f5f5;
+$grey-accent-color: #868A9A;
+$grey2-accent-color: #383949;
+
+.plane {
+	margin: 20px auto;
+	max-width: 250px;
+
+	.cockpit {
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		border-bottom: 5px solid #ebebeb;
+				
+		.plane-name {
+		   padding-top: 140px;
+		   color: #383949;
+		   opacity: 0.9; 
+		   z-index: 5; 
+
+		   p {
+			color: $red-color;
+		   }
+		}
+   	}
+
+	.cockpit:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 500px;
+		width: 100%;
+		border-radius: 50%;
+		border-right: 5px solid #ebebeb;
+		border-left: 5px solid #ebebeb;
+		background-color: rgba($color: #ffffff, $alpha: 0.7);
+	}
+
+	.exit {
+		position: relative;
+		height: 50px;
+
+		.btn-clear {
+			color: $navy-accent-color;
+			background-color: #ebebeb;
+			border-color: #ebebeb;
+			margin-top: 5px;
+			margin-left: 90px;
+		}
+		.btn-clear:hover {
+			background-color: #ff5156;
+			color: #ebebeb;
+		  }
+    }
+
+   .exit:before, .exit:after {
+	content: 'EXIT';
+		font-size: 14px;
+		line-height: 18px;
+		padding: 0px 2px;
+		font-family: 'Arial Narrow', Arial, sans-serif;
+		display: block;
+		position: absolute;
+		background: #ff5156;
+		color: #ebebeb;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+	.exit:before {
+		left: 0;
+	}
+	.exit:after {
+		right: 0;
+	}
+
+	.fuselage {
+		border-right: 5px solid #ebebeb;
+		border-left: 5px solid #ebebeb;
+		background-color: rgba($color: #ffffff, $alpha: 0.7);
+    }
+
+   ol {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.seats {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		justify-content: center;
+    }
+    .seat {
+		transition: transform .3s;
+		display: flex;
+		flex: 0 0 16%;
+		padding: 3px;
+		position: relative;
+	
+		label {
+			display: block;
+			position: relative;
+			width: 100%;
+			text-align: center;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 1.5rem;
+			padding: 4px 0;
+			background-color: $navy-accent-color;
+			color:#ebebeb;
+			border-radius: 5px;
+			cursor: pointer;
+	    } 
+
+	   input[type='checkbox'] {
+			position: absolute;
+			opacity: 0;
+   		}
+
+		.active {
+			display: block;
+			position: relative;
+			width: 100%;
+			text-align: center;
+			font-size: 14px;
+			font-weight: bold;
+			line-height: 1.5rem;
+			padding: 4px 0;
+			background-color: #ff5156;
+			border-radius: 5px;
+			cursor: pointer;
+	   }
+	   .reserved {
+			background-color: #868a9a;
+			cursor: no-drop;
+		}
+	}	
+
+	.seat:hover {
+		scale: 1.03;
+		background: #ff5156;
+	}
+
+	.seat:nth-child(2) {
+		margin-right: 50px;
+    }
 }
