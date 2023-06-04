@@ -20,6 +20,7 @@ import { FightGridComponent } from './pages/fight-grid/fight-grid.component';
 import { WeatherComponent } from './shared/weather/weather.component';
 import { TemperaturePipe } from './pipes/temperature.pipe';
 import { PlaneEmbraer190Component } from './shared/planes/plane-embraer190/plane-embraer190.component';
+import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,13 @@ import { PlaneEmbraer190Component } from './shared/planes/plane-embraer190/plane
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
+      deps: [PlatformLocation]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

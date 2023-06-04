@@ -1,16 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UsersData } from 'src/app/models/User';
 import { Observable, filter, first, map } from 'rxjs';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private usersUrl = './../../../assets/data/users.json';
+  private usersUrl;
   private isLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    @Inject(APP_BASE_HREF) private _baseHref: string
+    ) {
+      debugger
+      this.usersUrl = this._baseHref + 'assets/data/users.json'
+     }
 
   isUserLoggedIn() {
     return this.isLoggedIn;
