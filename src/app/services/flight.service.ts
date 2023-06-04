@@ -17,8 +17,6 @@ export class FlightService {
     const startDate = new Date();
     const monthsAhead = 6;
     this.flights = this.flightGeneratorService.generateFlights(startDate, monthsAhead);
-    console.log(this.flights);
-
   }  
 
   isReserved(flightId: number, seat: string): boolean {
@@ -50,8 +48,6 @@ export class FlightService {
       result = result.filter(flight => flight.to.toLowerCase() === this.searchCriteria.to.toLowerCase());
     } if (this.searchCriteria.departureDate) {
       result = result.filter(flight => flight.departureDate === this.searchCriteria.departureDate);
-    // } if (this.searchCriteria.returnDate) {
-    //   result = result.filter(flight => flight.returnDate === this.searchCriteria.returnDate);
     } if (this.searchCriteria.passengers) {
       result = result.filter(flight => flight.totalSeatsCount - flight.reservedSeats.length >= this.searchCriteria.passengers);
     } if (this.searchCriteria.class) {
@@ -61,13 +57,10 @@ export class FlightService {
   } 
   
   public getAllFlights() : Flight[] {
-    console.log(this.flights)
     return this.flights;
   }
 
   public getFlightsFrom(from: string) : Flight [] {
-    console.log(from);
-    console.log(this.flights.filter(f => f.from === from))
     return this.flights.filter(f => f.from === from);
   }
 
@@ -88,5 +81,4 @@ export class FlightService {
       flight.reservedSeats.push(...selectedSeats);
     }
   }
-
 }

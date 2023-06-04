@@ -3,7 +3,6 @@ export interface User {
     password: string;
   }
 
-
 export interface UsersData {
     users: User[]
 }

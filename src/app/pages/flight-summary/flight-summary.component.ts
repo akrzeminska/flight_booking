@@ -21,7 +21,6 @@ export class FlightSummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      // Pobieram wartości przekazane w parametrach zapytania
       this.origin = params['origin'];
       this.destination = params['destination'];
       this.departureDate = params['departureDate'];

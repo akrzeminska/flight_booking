@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'sales', component: SalesComponent },
   { path: 'contact', component: NotFoundComponent },
   { path: 'search', component: FlightSearchComponent },
-  { path: 'shopping', component: FlightSummaryComponent, canActivate: [AuthGuard] },
+  { path: 'shopping', component: NotFoundComponent },
   { path: 'flight-search', component: FlightSearchComponent},
   { path: 'flight-grid', component: FightGridComponent },
   { path: 'flight-details', component: FlightDetailsComponent },

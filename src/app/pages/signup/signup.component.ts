@@ -13,9 +13,7 @@ export class SignupComponent {
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.signUpForm = this.fb.group({
@@ -35,8 +33,6 @@ export class SignupComponent {
 
   onSignup(){
     if(this.signUpForm.valid){
-      
-      // console.log(this.signUpForm.value);
     } else {
       this.validateAllFormFields(this.signUpForm)
     }

@@ -63,15 +63,10 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
 
   onSelectedSeatsChange(selectedSeats: string[]): void {
     this.selectedSeats = selectedSeats;
-    console.log(this.selectedSeats);
-    console.log(this.selectedSeats.length); // Wyciągnij długość tablicy
     this.updateTotalPrice();
   }
 
   getSelectedBaggage(): void {
-    console.log(this.baggage);
-    console.log(this.flight.pricePerSeat);
-
     if (this.baggage === 'cabin') {
       this.pricePerBaggage = 50;
     } else if (this.baggage === 'cabin-checked') {
@@ -82,7 +77,6 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
 
     this.updateTotalPrice();
   }
-
   updateTotalPrice(): void {
     if (this.baggage === 'choose') {
       this.totalPrice = 0;
@@ -104,6 +98,5 @@ export class FlightDetailsComponent implements OnInit, OnDestroy {
         this.updateTotalPrice();
       });
     }   
-    
   }
 }

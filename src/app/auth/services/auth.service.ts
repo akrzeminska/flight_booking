@@ -13,7 +13,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   isUserLoggedIn() {
-    // console.log('zmienić to na return true');
     return this.isLoggedIn;
   }  
   
@@ -21,7 +20,6 @@ export class AuthService {
     return this.http.get<UsersData>(this.usersUrl).pipe(
       map((usersData) => 
         {
-          // console.log(usersData);
           this.isLoggedIn = usersData.users.some((user) => user.username === username && user.password === password);
           return this.isLoggedIn;
         }

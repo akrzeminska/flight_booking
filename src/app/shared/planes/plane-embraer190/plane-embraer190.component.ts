@@ -12,7 +12,7 @@ export class PlaneEmbraer190Component {
   selectedSeats: string[] = [];
 
   @Input() flightId!: number;
-  @Input() passengersCount!: number; //przekazanie liczby pasażerów do graniczenia wyboru miejsc w samolocie
+  @Input() passengersCount!: number;
   @Output() selectedSeatsChange = new EventEmitter<string[]>();
 
   constructor(private flightService: FlightService) { }
@@ -36,7 +36,6 @@ export class PlaneEmbraer190Component {
           alert('The maximum number of seats has been selected.');
         }
       }
-      console.log(this.selectedSeats);
       this.selectedSeatsChange.emit(this.selectedSeats);
     }
   }
@@ -47,7 +46,6 @@ export class PlaneEmbraer190Component {
 
   clearSeats(): void {
     this.selectedSeats = [];
-    // console.log(this.selectedSeats);
   }
 
 }

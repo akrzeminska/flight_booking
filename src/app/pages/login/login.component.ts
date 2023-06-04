@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   hideShowPass(){
-    // console.log('it works!')
     this.isText = !this.isText;
     this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
     this.isText ? this.type = "text" : this.type = "password";
@@ -36,18 +35,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if(this.loginForm.valid) {
-      // send the object to database
-      // console.log(this.loginForm.value);
       const username : string = this.loginForm.controls['username'].value;
       const password : string = this.loginForm.controls['password'].value;
       this.authServce.checkCredentials(username, password).subscribe((isLoggedIn) => {
         if (isLoggedIn) {
           this.activatedRoute.queryParams.subscribe((queryParams: any) => {
             this.router.navigateByUrl(queryParams.redirect)
-            //Zamiana navigate na navigatebyUrl.
-            //this.router.navigate([queryParams.redirect])
           });
-          alert('Login success!')
         } else {    
           alert('User not found. Try again or go for user registration.');
         }

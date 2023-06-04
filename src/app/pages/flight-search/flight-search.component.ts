@@ -11,7 +11,7 @@ import { FlightSearchCriteria } from 'src/app/models/FlightSearchCriteria';
 })
 export class FlightSearchComponent implements OnInit {
   flightSearchForm!: FormGroup;
-  searchResults: any[] = []; // Tablica przechowująca wyniki wyszukiwania lotów
+  searchResults: any[] = [];
   availableFroms: string[] = [];
   availableTos: string[] = [];
 
@@ -65,6 +65,5 @@ export class FlightSearchComponent implements OnInit {
     const to = this.getValueFromControl('to');
     return from === to;
   }
-
 }
 
