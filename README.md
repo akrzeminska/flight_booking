@@ -1,27 +1,77 @@
-# FlightBooking
+# NOVO Air Flight
+Welcome to the NOVO Air Flight reservation system! This Angular 15.2.4-based application allows users to search and book flights to various destinations. The application integrates with Bootstrap, Font Awesome, OpenWeather API, and NBP API to provide a seamless user experience.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+##### Live demo: https://akrzeminska.github.io/flight_booking/home
 
-## Development server
+## Table of Contents
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Roadmap](#roadmap)
+* [Installation](#installation)
+* [Credits](#credits)
+* [Author](#author)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## The building blocks of an application
+![Web version](./doc/img/app_arch.jpg)
+## Features
+* Search one-way flights between three predefined cities.
+* Flights are scheduled once daily.
+* Choose flight dates from today up to 6 months in advance.
+* Display current time, date, and weather for the user's location on the search panel.
+* Select the number of passengers and preferred class during flight search.
+* View available flights that match the search criteria, including the number of available seats.
+* Proceed to the details page to select seats on the airplane layout and choose luggage options.
+* Some seats are pre-reserved and unavailable for selection.
+* Calculate the ticket cost in PLN, EUR, and USD using the NBP API for currency exchange rates.
+* After confirmation, users are redirected to the login panel.
+* Once logged in, users can access their ticket with detailed reservation information.
 
-## Code scaffolding
+## Technologies Used
+This app was built using:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* HTML
+* Bootstrap
+* CSS/SCSS
+* Typescript
+* Angular 15.2.4
+* RxJS
+* Node.js
+* NPM
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Roadmap
+The application is under active development, and the following features are planned for future releases:
 
-## Running unit tests
+* Payment module integration for secure online payments.
+* Full responsive design (RWD) for the application.
+* User registration functionality.
+* Weather widget integration for the destination location.
+* Expansion of airplane templates based on selected destinations.
+* Addition of a promotional code field in the details tab to apply available discounts from the sales section.
+* Completion of the contact and about us sections.
+* Expansion of seat classes on the airplane.
+* We are committed to continuously improving the application to provide an enhanced flight reservation experience.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
+To run the NOVO Air Flight application locally, follow these steps:
 
-## Running end-to-end tests
+- Clone the repository: ```git clone https://github.com/akrzeminska/flight_booking.git```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Navigate to the project directory: ```cd flight_booking```
 
-## Further help
+- Install the required dependencies: ```npm install```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Start the development server: ```ng serve```
+
+- Open your browser and access the application at ```http://localhost:4200```
+
+## Credits
+This application was built using the following resources:
+
+- Icons from Font Awesome
+- Fonts from Google Fonts
+- Weather API provided by OpenWeather
+- Currency API provided by NBP
+- Graphics from Pixabay
+## Author
+Created by _Adelina Krzemińska_
