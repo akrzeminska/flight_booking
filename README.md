@@ -1,7 +1,7 @@
 # NOVO Air Flight
 Welcome to the NOVO Air Flight reservation system! This Angular 15.2.4-based application allows users to search and book flights to various destinations. The application integrates with Bootstrap, Font Awesome, OpenWeather API, and NBP API to provide a seamless user experience.
 
-##### Live demo: https://akrzeminska.github.io/flight_booking/home
+##### Live demo: https://akrzeminska.github.io/flight_booking
 
 ## Table of Contents
 * [Features](#features)
