@@ -12,7 +12,6 @@ export class FlightGeneratorService {
 
   generateFlights(startDate: Date, monthsAhead: number): Flight[] {
     const flights: Flight[] = [];
-
     const currentDate = new Date();
     const endDate = new Date();
     endDate.setMonth(currentDate.getMonth() + monthsAhead);
@@ -27,7 +26,6 @@ export class FlightGeneratorService {
             const randomSeats = this.getRandomSeats();
             const randomClass = this.getRandomClass();
             const randomPrice = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
-
             const flight : Flight = {
               id: i++, from: fromCity, to: toCity, departureDate: flightDate, reservedSeats: randomSeats, class: randomClass,
               totalSeatsCount: 40, 
@@ -45,7 +43,6 @@ export class FlightGeneratorService {
   private getRandomSeats(): string[] {
     const numSeats = Math.floor(Math.random() * 10) + 1;
     const seats: string[] = [];
-
     for (let i = 0; i < numSeats; i++) {
       const randomRow = this.seatRows[Math.floor(Math.random() * this.seatRows.length)];
       const randomColumn = this.seatColumns[Math.floor(Math.random() * this.seatColumns.length)];
