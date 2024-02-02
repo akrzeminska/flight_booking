@@ -3,6 +3,10 @@ Welcome to the NOVO Air Flight reservation system! This Angular 15.2.4-based app
 
 ##### Live demo: https://akrzeminska.github.io/flight_booking
 
+
+![Web version](./doc/gif/app-demo_g.gif)
+
+
 ## Table of Contents
 * [Credentials](#credentials)
 * [Features](#features)
@@ -12,8 +16,13 @@ Welcome to the NOVO Air Flight reservation system! This Angular 15.2.4-based app
 * [Credits](#credits)
 * [Author](#author)
 ## Credentials
-Use **login: admin**
-**password: admin** to log in a application panel
+Use:
+
+**login: admin**
+
+**password: admin**
+
+to log in a application panel
 
 ## The building blocks of an application
 ![Web version](./doc/img/app_arch.jpg)

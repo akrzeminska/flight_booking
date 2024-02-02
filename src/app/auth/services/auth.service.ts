@@ -14,7 +14,6 @@ export class AuthService {
   constructor(private http: HttpClient,
     @Inject(APP_BASE_HREF) private _baseHref: string
     ) {
-      debugger
       this.usersUrl = this._baseHref + 'assets/data/users.json'
      }
 
